@@ -1,6 +1,6 @@
 # Instructions for deploying BASH environment
 
-1. Move new machines bash configurations into a file for safe keeping
+1. Move new machine's bash configurations into a file for safe keeping
 
 ```
 mv .bash_profile  ~/dotfiles/oldconfig
@@ -41,6 +41,8 @@ fi
 2. In  ~/.bashrc write the code below. This sources the .bashrc you cloned from your repo
 
 ```
+# write in .bashrc
+
 source ~/dotfiles/.bashrc
 ```
 
