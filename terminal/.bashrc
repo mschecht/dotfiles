@@ -2,7 +2,7 @@
 #
 # .bash_profile
 #
-# MAKE TERMINAL GREAT AGAIN!!!!	!
+# MAKE TERMINAL GREAT AGAIN!
 #
 # Description: This file contains all of my BASH configurations and aliases
 #
