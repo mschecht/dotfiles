@@ -3,6 +3,8 @@
 1. Move new machine's bash configurations into a file for safe keeping
 
 ```
+mkdir ~/dotfiles/oldconfig
+
 mv .bash_profile  ~/dotfiles/oldconfig
 
 mv .bashrc ~/dotfiles/oldconfig
