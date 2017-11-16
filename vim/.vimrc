@@ -2,7 +2,8 @@ set number
 
 syntax on
 
-colorscheme darkblue
+set background=dark
+colorscheme solarized
 
 inoremap jj <ESC>
 
