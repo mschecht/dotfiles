@@ -145,7 +145,12 @@ export PS2;
 export CLICOLOR=2
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-alias ll='ls -lag'
+alias ll='ls -lagh'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
+
+# git aliases
+alias gp='git pull'
+alias gs='git status'
+alias gcm='git commit -m'
