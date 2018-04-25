@@ -26,6 +26,16 @@ Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'valloric/youcompleteme'
 
+Plugin 'jalvesaq/Nvim-R'
+
+" VIM markdown syntax
+Plugin 'godlygeek/tabular'
+
+Plugin 'plasticboy/vim-markdown'
+
+" Markdown preview
+Plugin 'suan/vim-instant-markdown'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
