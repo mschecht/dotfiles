@@ -1,16 +1,3 @@
-set number
-
-set backspace=2
-
-syntax on
-
-set background=dark
-colorscheme solarized
-
-inoremap jj <ESC>
-
-:map <C-n> :NERDTree
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -22,11 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 
-Plugin 'altercation/vim-colors-solarized'
-
-Plugin 'valloric/youcompleteme'
-
-Plugin 'jalvesaq/Nvim-R'
+Plugin 'terryma/vim-multiple-cursors'
 
 " VIM markdown syntax
 Plugin 'godlygeek/tabular'
@@ -41,12 +24,29 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+
+" Adjusting how Vim looks
+set number
+
+set relativenumber
+
+set smartindent
+
+set tabstop=4
+
+set shiftwidth=4
+
+set expandtab
+
+set backspace=2
+
+syntax on
+
+set background=dark
+"colorscheme solarized
+
+inoremap jj <ESC>
+
+" remap NERDTree to cntrl-n
+:map <C-n> :NERDTree
+
