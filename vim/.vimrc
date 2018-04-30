@@ -36,17 +36,41 @@ set tabstop=4
 
 set shiftwidth=4
 
-set expandtab
-
 set backspace=2
 
 syntax on
 
 set background=dark
-"colorscheme solarized
 
-inoremap jj <ESC>
-
-" remap NERDTree to cntrl-n
+" remap NERDTree to ctrl-n
 :map <C-n> :NERDTree
+" automatically start vim if no file is specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+
+
+" Instant Markdown
+" manually start markdown preview in browser
+let g:instant_markdown_autostart = 0
+:map <C-i> :InstantMarkdownPreview
+
+" Multipule cursors
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-m>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-m>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+" let g:multi_cursor_quit_key            = '<Esc>'
+
+" plasticboy/vim-markdown disable text folding 
+let g:vim_markdown_folding_disabled = 1
+
+
+
 
