@@ -3,7 +3,7 @@
 export COLOR_BOLD="\[\033[1;31m\]"
 export COLOR_DEFAULT="\[\e[0m\]"
 export PROMPT_DIRTRIM=8
-export PS1="$COLOR_BOLD[\u@\h \w]\$ \e[m\n"
+export PS1="$COLOR_BOLD[\t] [\u@\h \w]\$ \e[m\n"
 
 export CLICOLOR=2
 export LSCOLORS=GxFxCxDxBxegedabagaced
