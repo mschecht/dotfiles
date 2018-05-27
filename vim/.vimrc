@@ -48,8 +48,6 @@ set background=dark
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-
-
 " Instant Markdown
 " manually start markdown preview in browser
 let g:instant_markdown_autostart = 0
@@ -70,7 +68,3 @@ let g:multi_cursor_skip_key            = '<C-x>'
 
 " plasticboy/vim-markdown disable text folding 
 let g:vim_markdown_folding_disabled = 1
-
-
-
-
