@@ -19,6 +19,9 @@ Plugin 'plasticboy/vim-markdown'
 " Markdown preview
 Plugin 'suan/vim-instant-markdown'
 
+" Python IDE
+Plugin 'davidhalter/jedi-vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -41,6 +44,9 @@ set backspace=2
 syntax on
 
 set background=dark
+
+" Allow copying to system clipboard
+set clipboard=unnamed
 
 " remap NERDTree to ctrl-n
 :map <C-n> :NERDTree
