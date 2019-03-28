@@ -3,7 +3,6 @@
 ############################
 
 # Terminal prompt
-#PS1=[ -z "$PS1" ] && return
 export COLOR_A="\[\033[0;31m\]"
 export COLOR_B="\[\033[0;33m\]"
 export COLOR_C="\[\033[0;32m\]"
@@ -15,32 +14,21 @@ export USER="\u"
 export HOST="\h"
 export WD="\w" # working directory
 export PS1="$COLOR_A[$TIME] $COLOR_B[$USER@$HOST:$COLOR_C$WD$COLOR_B]$ $COLOR_DEFAULT\n"
-#export PS1=""$COLOR_A"["$TIME"] ["$COLOR_C""$USER"@"$HOST": "$COLOR_B"\w]\$ $COLOR_DEFAULTi\n"
-#export PS1="$COLOR_BOLD[\t] \e[m$NEXT_COLOR\u\e[m@\h: \w]\$ \n"
 
-# ==== alias for colors ========
-BLACK="tput setf 0"
-BLUE="tput setf 1"
-GREEN="tput setf 2"
-CYAN="tput setf 3"
-RED="tput setf 4"
-MAGENTA="tput setf 5"
-YELLOW="tput setf 6"
-WHITE="tput setf 7"
+##################
+# LS color options
+#################
+# Here is a good link to changing colors: https://geoff.greer.fm/lscolors/
 
+OS=$(uname) # Run `uname` command to get current OS
 
-RETURN="tput sgr0"
-BOLD="tput bold"
-REV="tput rev"
-
-
-# Some examples of use
-
-#PS1="`$REV``$RED`[$netip `$BLUE`/\W]#`$RETURN` "
-
-
-export CLICOLOR=2
-export LSCOLORS=GxFxCxDxBxegedabagaced
+# Run necessary colors setting for IOS or Linux
+if [[ "$OS" == "Linux" ]]; then
+	export LSCOLORS=di=1;36:ln=1;35:so=1;32:pi=1;33:ex=1;31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=34;43 # Linux
+elif [[ "$OS" == "Darwin" ]]; then
+    export CLICOLOR=2    
+	export LSCOLORS=GxFxCxDxBxegedabagaced # IOS
+fi
 
 #########
 # Aliases
