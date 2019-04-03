@@ -34,10 +34,10 @@ fi
 # Aliases
 #########
 
-alias ll='ls -lagh'
-alias ..='cd ..'
-alias ...='cd ../../'
-alias ....='cd ../../../'
+## INCLUDE aliases
+if [ -f ~/.bash-aliases ]; then
+   . ~/.bash-aliases
+fi
 
 ##############
 # Miscilaneous

@@ -1,0 +1,8 @@
+alias ll='ls -lagh'
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+
+
+alias keep="fc -ln -1 | sed 's/^\s\+//'>>COMAND-HIST"
+
