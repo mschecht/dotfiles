@@ -2,7 +2,11 @@
 # MAKE TERMINAL GREAT AGAIN!
 ############################
 
+#----------------
 # Terminal prompt
+#----------------
+
+# Variables
 export COLOR_A="\[\033[0;31m\]"
 export COLOR_B="\[\033[0;33m\]"
 export COLOR_C="\[\033[0;32m\]"
@@ -13,11 +17,14 @@ export TIME="\t"
 export USER="\u"
 export HOST="\h"
 export WD="\w" # working directory
+
+# Prompt layout
 export PS1="$COLOR_A[$TIME] $COLOR_B[$USER@$HOST:$COLOR_C$WD$COLOR_B]$ $COLOR_DEFAULT\n"
 
-##################
+#-----------------
 # LS color options
-#################
+#-----------------
+
 # Here is a good link to changing colors: https://geoff.greer.fm/lscolors/
 
 OS=$(uname) # Run `uname` command to get current OS
@@ -30,63 +37,21 @@ elif [[ "$OS" == "Darwin" ]]; then
 	export LSCOLORS=GxFxCxDxBxegedabagaced # IOS
 fi
 
-#########
+#-------------
 # BASH Aliases
-#########
+#-------------
 
-## INCLUDE aliases
+# All aliases are here
 if [ -f ~/.bash-aliases ]; then
    . ~/.bash-aliases
 fi
 
-################
+#---------------
 # BASH Functions
-################
+#---------------
+
+# All BASH functions are here
 if [ -f ~/.bash-functions ]; then
 . ~/.bash-functions
 fi
 
-
-##############
-# Miscilaneous
-##############
-
-# bibtex script
-# Make .bib file in current directory and add bibtex citations to it with DOI
-# usage: doi2bib DOI
-doi2bib ()
-{
-	echo >> bib.bib;
-	curl -s "http://api.crossref.org/works/$1/transform/application/x-bibtex" >> bib.bib;
-	echo >> bib.bib;
-}
-
-# Jupyter lab through ssh tunnel on remote server
-# Credit: http://benjlindsay.com/blog/running-jupyter-lab-remotely/
-function jllocal {
-  cmd="ssh -Y -fN -L localhost:8885:localhost:8888 mschecht@bigmem-3"
-  running_cmds=$(ps aux | grep -v grep | grep "$cmd")
-  if [[ "$1" == 'kill' ]]; then
-    if [ ! -z $running_cmds ]; then
-      for pid in $(echo $running_cmds | awk '{print $2}'); do
-        echo "killing pid $pid"
-        kill -9 $pid
-      done
-    else
-      echo "No jllocal commands to kill."
-    fi
-  else
-    if [ ! -z $n_running_cmds ]; then
-      echo "jllocal command is still running. Kill with 'jllocal kill' next time."
-    else
-      echo "Running command '$cmd'"
-      eval "$cmd"
-    fi
-    url=$(ssh USERNAME@HOSTNAME \
-            '/REMOTE/PATH/TO/jupyter notebook list' \
-            | grep http | awk '{print $1}')
-    echo "URL that will open in your browser:"
-    echo "$url"
-    open "$url"
-  fi
-}
