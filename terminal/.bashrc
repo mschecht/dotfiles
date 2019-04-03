@@ -31,13 +31,21 @@ elif [[ "$OS" == "Darwin" ]]; then
 fi
 
 #########
-# Aliases
+# BASH Aliases
 #########
 
 ## INCLUDE aliases
 if [ -f ~/.bash-aliases ]; then
    . ~/.bash-aliases
 fi
+
+################
+# BASH Functions
+################
+if [ -f ~/.bash-functions ]; then
+. ~/.bash-functions
+fi
+
 
 ##############
 # Miscilaneous
