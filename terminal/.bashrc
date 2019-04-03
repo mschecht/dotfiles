@@ -37,6 +37,46 @@ elif [[ "$OS" == "Darwin" ]]; then
 	export LSCOLORS=GxFxCxDxBxegedabagaced # IOS
 fi
 
+
+#------------------------------
+# BASH command history settings
+#------------------------------
+# Great resource: https://www.shellhacks.com/tune-command-line-history-bash/
+
+# ignorespace: don’t save lines which begin with a <space> character; erasedups: eliminate duplicates across the whole history
+export HISTCONTROL=ignorespace:erasedups
+# Increase size
+export HISTSIZE=100000000000
+export HISTFILESIZE=10000000000
+# Append Bash Commands to History File
+shopt -s histappend
+# History time format
+HISTTIMEFORMAT="%d/%m/%y %T "
+
+#after each command save and reload history
+
+log_bash_persistent_history()
+{
+        [[
+        $(history 1) =~ ^\ *[0-9]+\ +([^\ ]+\ [^\ ]+)\ +(.*)$
+        ]]
+        local date_part="${BASH_REMATCH[1]}"
+        local command_part="${BASH_REMATCH[2]}"
+        if [ "$command_part" != "$PERSISTENT_HISTORY_LAST" ]
+        then
+                echo $date_part "|" "$command_part" >> ~/.persistent_history
+                export PERSISTENT_HISTORY_LAST="$command_part"
+        fi
+}
+
+# Stuff to do on PROMPT_COMMAND
+run_on_prompt_command()
+{
+        log_bash_persistent_history
+}
+
+export PROMPT_COMMAND="history -a; history -c; history -r; run_on_prompt_command; $PROMPT_COMMAND"
+
 #-------------
 # BASH Aliases
 #-------------
