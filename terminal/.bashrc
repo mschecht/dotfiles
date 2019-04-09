@@ -101,3 +101,10 @@ fi
 #----------
 #export PATH=""${HOME}"/miniconda3/miniconda3/bin:$PATH"
 export PATH="$HOME/miniconda3/bin:$PATH"
+
+
+
+#----------------------
+# Pointing RStudio to R
+#----------------------
+export RSTUDIO_WHICH_R=/usr/local/Cellar/r/3.5.3/bin/R

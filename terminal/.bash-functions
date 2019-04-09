@@ -3,7 +3,12 @@
 # usage: doi2bib DOI
 doi2bib ()
 {
-	echo >> bib.bib;
-	curl -s "http://api.crossref.org/works/$1/transform/application/x-bibtex" >> bib.bib;
-	echo >> bib.bib;
+	printf "\n">> $2
+	curl -s "http://api.crossref.org/works/$1/transform/application/x-bibtex" >> $2;
 }
+
+# create .tar.gz
+targz() { tar -zcvf $1.tar.gz $1; rm -r $1; }
+# extra .tar.gz
+untargz() { tar -zxvf $1; rm -r $1; }
+

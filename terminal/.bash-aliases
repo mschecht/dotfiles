@@ -1,8 +1,16 @@
+# essentials
 alias ll='ls -lgh'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 
-
+# Keep previous command for later
 alias keep="fc -ln -1 | sed 's/^\s\+//'>>COMAND-HIST"
 
+# reload .bash
+alias reload_rc='. ~/.bashrc'
+
+# git
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
