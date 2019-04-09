@@ -12,3 +12,35 @@ targz() { tar -zcvf $1.tar.gz $1; rm -r $1; }
 # extra .tar.gz
 untargz() { tar -zxvf $1; rm -r $1; }
 
+# Automagically open Jupyter Lab and have it connected to server
+# credit: https://benjlindsay.com/blog/running-jupyter-lab-remotely/
+function jllocal {
+  cmd="ssh -Y -fN -L localhost:8888:localhost:8888 USERNAME@HOSTNAME"
+  running_cmds=$(ps aux | grep -v grep | grep "$cmd")
+  if [[ "$1" == 'kill' ]]; then
+    if [ ! -z $running_cmds ]; then
+      for pid in $(echo $running_cmds | awk '{print $2}'); do
+        echo "killing pid $pid"
+        kill -9 $pid
+      done
+    else
+      echo "No jllocal commands to kill."
+    fi
+  else
+    if [ ! -z $n_running_cmds ]; then
+      echo "jllocal command is still running. Kill with 'jllocal kill' next time."
+    else
+      echo "Running command '$cmd'"
+      eval "$cmd"
+    fi
+    url=$(ssh USERNAME@HOSTNAME \
+            '/REMOTE/PATH/TO/jupyter notebook list' \
+            | grep http | awk '{print $1}')
+    echo "URL that will open in your browser:"
+    echo "$url"
+    open "$url"
+  fi
+
+# Automgaically open A'nvio and have it connected to server
+# DO IT Yourself
+# credit: http://merenlab.org/2015/11/28/visualizing-from-a-server/
