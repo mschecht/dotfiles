@@ -28,6 +28,9 @@ Plugin 'godlygeek/tabular'
 
 Plugin 'plasticboy/vim-markdown'
 
+" Python autocomplete
+Plugin 'davidhalter/jedi-vim'
+
 " Markdown preview
 Plugin 'suan/vim-instant-markdown'
 
@@ -92,20 +95,32 @@ let g:multi_cursor_skip_key            = '<C-x>'
 " plasticboy/vim-markdown disable text folding 
 let g:vim_markdown_folding_disabled = 1
 
+"
 " Python stuff
+"
 " Credit: https://realpython.com/vim-and-python-a-match-made-in-heaven/
 
+au BufNewFile,BufRead *.py set syntax=python
+
 " PEP8
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+"au BufNewFile,BufRead *.py
+"    \ set tabstop=4
+"    \ set softtabstop=4
+"    \ set shiftwidth=4
+"    \ set textwidth=79
+"    \ set expandtab
+"    \ set autoindent
+"    \ set fileformat=unix
+
+" SNAKEMAKE syntax highlighting
+" Credit: https://snakemake.readthedocs.io/en/stable/project_info/faq.html#how-do-i-enable-syntax-highlighting-in-vim-for-snakefiles
+au BufNewFile,BufRead Snakefile set syntax=snakemake
+au BufNewFile,BufRead *.smk set syntax=snakemake
 
 set encoding=utf-8
+
 let python_highlight_all=1
 
 let g:powerline_pycmd = 'py3'
+
+
