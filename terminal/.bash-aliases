@@ -4,6 +4,20 @@ alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 
+# add color to grep
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# History commands
+alias h="history"
+alias h1="history 10"
+alias h2="history 20"
+alias h3="history 30"
+
+# wget
+alias wget="wget -c"
+
 # Keep previous command for later
 alias keep="fc -ln -1 | sed 's/^\s\+//'>>COMAND-HIST"
 
