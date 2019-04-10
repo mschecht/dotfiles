@@ -2,14 +2,26 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" call vundle#begin('~/some/path/here')
+" Great info here: https://realpython.com/vim-and-python-a-match-made-in-heaven/#vundle
+" and here: https://www.ostechnix.com/manage-vim-plugins-using-vundle-linux/
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 
-Plugin 'terryma/vim-multiple-cursors'
+" Python stuff
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
+
+" Powerline
+" info: https://powerline.readthedocs.io/en/latest/index.html
+" Powerline is not loading correctly... try to fix in the future
+" The solution is here: https://github.com/gnachman/iTerm2/commit/8e3ad6dabf83c60b8cf4a3e3327c596401744af6
+"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+"Plugin 'terryma/vim-multiple-cursors'
 
 " VIM markdown syntax
 Plugin 'godlygeek/tabular'
@@ -18,6 +30,10 @@ Plugin 'plasticboy/vim-markdown'
 
 " Markdown preview
 Plugin 'suan/vim-instant-markdown'
+
+" Helps indent with Python Scripts
+" Credit: https://github.com/vim-scripts/indentpython.vim
+Plugin 'vim-scripts/indentpython.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,8 +61,12 @@ set background=dark
 " Allow copying to system clipboard
 set clipboard=unnamed
 
+" Mouse magic
+set mouse=a
+
 " remap NERDTree to ctrl-n
 :map <C-n> :NERDTree
+
 " automatically start vim if no file is specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -71,3 +91,21 @@ let g:multi_cursor_skip_key            = '<C-x>'
 
 " plasticboy/vim-markdown disable text folding 
 let g:vim_markdown_folding_disabled = 1
+
+" Python stuff
+" Credit: https://realpython.com/vim-and-python-a-match-made-in-heaven/
+
+" PEP8
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+set encoding=utf-8
+let python_highlight_all=1
+
+let g:powerline_pycmd = 'py3'
