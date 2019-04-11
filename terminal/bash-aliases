@@ -29,3 +29,7 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
+
+# Show $PATH in prettier format
+# credit: https://github.com/stephenturner/oneliners
+alias showpath='echo $PATH | tr ":" "\n" | nl'
