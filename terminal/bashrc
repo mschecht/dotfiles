@@ -7,10 +7,10 @@
 #----------------
 
 # Variables
-export COLOR_A="\[\033[0;31m\]"
-export COLOR_B="\[\033[0;33m\]"
-export COLOR_C="\[\033[0;32m\]"
-export COLOR_d="\[\033[0;34m\]"
+export COLOR_A="\[\033[1;31m\]"
+export COLOR_B="\[\033[1;33m\]"
+export COLOR_C="\[\033[1;32m\]"
+export COLOR_d="\[\033[1;34m\]"
 export COLOR_DEFAULT="\[\e[0m\]"
 export PROMPT_DIRTRIM=8
 export TIME="\t"
