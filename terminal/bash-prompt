@@ -1,0 +1,32 @@
+#----------------
+# Terminal prompt
+#----------------
+# Variables
+export RED="\[\033[0;31m\]"
+export BOLD_RED="\[\033[1;31m\]"
+export YELLOW="\[\033[0;33m\]"
+export GREEN="\[\033[0;32m\]"
+export COLOR_d="\[\033[0;34m\]"
+export COLOR_DEFAULT="\[\e[0m\]"
+export PROMPT_DIRTRIM=8
+export TIME="\t"
+export USER="\u"
+export HOST="\h"
+export WD="\w" # working directory
+
+
+# Highlight the hostname when connected via SSH.
+if [[ "${SSH_TTY}" ]]; then
+        hostStyle="${BOLD_RED}";
+else
+        hostStyle="${GREEN}";
+fi;
+
+# Prompt layout
+PS1="$RED[$TIME] " # time
+PS1+="$YELLOW[$USER@" # username
+PS1+="$hostStyle$HOST$YELLOW:" # host
+PS1+="$RED$WD$YELLOW]$" # working directory
+PS1+=" $COLOR_DEFAULT\n" # output
+
+export PS1

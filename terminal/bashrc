@@ -2,35 +2,6 @@
 # MAKE TERMINAL GREAT AGAIN!
 ############################
 
-#----------------
-# Terminal prompt
-#----------------
-
-# Variables
-export COLOR_A="\[\033[0;31m\]"
-export COLOR_B="\[\033[0;33m\]"
-export COLOR_C="\[\033[0;32m\]"
-export COLOR_d="\[\033[0;34m\]"
-export COLOR_DEFAULT="\[\e[0m\]"
-export PROMPT_DIRTRIM=8
-export TIME="\t"
-export USER="\u"
-export HOST="\h"
-export WD="\w" # working directory
-
-
-# Highlight the hostname when connected via SSH.
-# Credit: https://github.com/mathiasbynens/dotfiles/blob/master/.bash_prompt#L101-L106
-if [[ "${SSH_TTY}" ]]; then
-		hostStyle="${bold}${red}";
-	else
-			hostStyle="${COLOR_C}";
-		fi;
-
-# Prompt layout
-#export PS1="$COLOR_A[$TIME] $COLOR_B[$USER@$COLOR_C$HOST$COLOR_B:$COLOR_A$WD$COLOR_B]$ $COLOR_DEFAULT\n"
-export PS1="$COLOR_A[$TIME] $COLOR_B[$USER@$hostStyle$HOST$COLOR_B:$COLOR_A$WD$COLOR_B]$ $COLOR_DEFAULT\n"
-
 #-----------------
 # LS color options
 #-----------------
@@ -96,7 +67,7 @@ export PROMPT_COMMAND="history -a; history -c; history -r; run_on_prompt_command
 # All BASH aliases are here
 # * ~/.extra can be used for other settings you don’t want to commit.
 
-for file in ~/.{bash-functions,bash-aliases,exports,aliases,functions,extra}; do
+for file in ~/.{bash-functions,bash-aliases,bash-prompt,exports,aliases,functions,extra}; do
 		[ -r "$file" ] && [ -f "$file" ] && source "$file";
 	done;
 	unset file;
