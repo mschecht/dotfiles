@@ -1,3 +1,4 @@
+#!/bin/bash
 ############################
 # MAKE TERMINAL GREAT AGAIN!
 ############################
@@ -67,12 +68,24 @@ export PROMPT_COMMAND="history -a; history -c; history -r; run_on_prompt_command
 # All BASH aliases are here
 # * ~/.extra can be used for other settings you don’t want to commit.
 
-for file in ~/.{bash-functions,bash-aliases,bash-prompt,exports,aliases,functions,extra}; do
-		[ -r "$file" ] && [ -f "$file" ] && source "$file";
-	done;
-	unset file;
+#for file in ~/.{bash-functions,bash-aliases,bash-prompt,exports,aliases,functions,extra}; do
+#		[ -r "$file" ] && [ -f "$file" ] && source "$file";
+#	done;
+#	unset file;
 
-#------------------------------------------
+for file in ~/.{bash-functions,bash-aliases,bash-prompt,exports,extra}; do
+	if	[ -e "${file}" ] ; then
+		source "${file}"
+	else
+		touch "${file}" # need to fix this section
+		dot=$(basename "${file}")
+		echo "source ~/dotfiles/terminal/"${dot}"" > "${file}"
+		source "${file}"
+	fi;
+done;
+unset file;
+
+	#------------------------------------------
 # Add tab completion for many Bash commands
 #------------------------------------------
 # Credit: https://github.com/mathiasbynens/dotfiles/blob/master/.bash_profile#L28-L33
