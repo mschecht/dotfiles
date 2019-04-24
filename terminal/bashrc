@@ -68,12 +68,7 @@ export PROMPT_COMMAND="history -a; history -c; history -r; run_on_prompt_command
 # All BASH aliases are here
 # * ~/.extra can be used for other settings you don’t want to commit.
 
-#for file in ~/.{bash-functions,bash-aliases,bash-prompt,exports,aliases,functions,extra}; do
-#		[ -r "$file" ] && [ -f "$file" ] && source "$file";
-#	done;
-#	unset file;
-
-for file in ~/.{bash-functions,bash-aliases,bash-prompt,exports,extra}; do
+for file in ~/.{bash-functions,bash-aliases,bash-prompt}; do
 	if	[ -e "${file}" ] ; then
 		source "${file}"
 	else
