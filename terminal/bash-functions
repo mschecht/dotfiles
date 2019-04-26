@@ -69,13 +69,7 @@ function jllocal {
 # credit: http://merenlab.org/2015/11/28/visualizing-from-a-server/
 #
 
-# Multi prompt doesnt work... fix later
-# # https://www.askapache.com/linux/bash-power-prompt/
-multi-prompt ()
- {
-	if [["$1" == "1"]]; then
-		export PS1='$(dirs) \$ '
-	elif [["$1" == "2"]]; then
-		export PS1="$COLOR_A[$TIME] $COLOR_B[$USER@$COLOR_C$HOST$COLOR_B:$COLOR_A$WD$COLOR_B]$ $COLOR_DEFAULT\n"
-	fi
+# Zcat + head 
+zhead() {
+	zcat $1 | head
 }

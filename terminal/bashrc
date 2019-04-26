@@ -66,7 +66,7 @@ export PROMPT_COMMAND="history -a; history -c; history -r; run_on_prompt_command
 # * ~/.path can be used to extend `$PATH`.
 # All BASH functions are here
 # All BASH aliases are here
-# * ~/.extra can be used for other settings you don’t want to commit.
+# * ~/.extra can be used for other settings you dont want to commit.
 
 for file in ~/.{bash-functions,bash-aliases,bash-prompt}; do
 	if	[ -e "${file}" ] ; then
@@ -80,7 +80,7 @@ for file in ~/.{bash-functions,bash-aliases,bash-prompt}; do
 done;
 unset file;
 
-	#------------------------------------------
+#------------------------------------------
 # Add tab completion for many Bash commands
 #------------------------------------------
 # Credit: https://github.com/mathiasbynens/dotfiles/blob/master/.bash_profile#L28-L33

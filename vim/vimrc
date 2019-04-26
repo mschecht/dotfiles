@@ -49,8 +49,8 @@ set number
 set relativenumber
 
 " Scroll through Ctrl+n autocomplete with jk
-inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
-inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
+"inoremap pumvisible() ?	"\<C-n>" : "j"
+"inoremap pumvisible() ?	"\<C-p>" : "k"
 
 set wildmode=longest,list,full
 set wildmenu
@@ -63,8 +63,6 @@ set softtabstop=4
 set shiftwidth=4
 set smarttab
 set backspace=2
-set noerrorbells
-set visualbell
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set list
