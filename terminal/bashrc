@@ -106,7 +106,8 @@ export PATH="$HOME/miniconda3/bin:$PATH"
 #---------
 # Language
 #---------
-export LANG=en_US.utf8
+
+export LANG=en_US.UTF-8
 
 #----------------------
 # Pointing RStudio to R
@@ -118,3 +119,9 @@ export RSTUDIO_WHICH_R=/usr/local/Cellar/r/3.5.3/bin/R
 #-------------------------
 
 export HOMEBREW_EDITOR="/usr/local/bin/vim"
+
+#----------
+# Ruby shit
+#----------
+export PATH=/usr/local/opt/ruby/bin:$PATH
+export PATH=/usr/local/lib/ruby/gems/2.5.0/bin:$PATH
