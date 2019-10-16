@@ -27,7 +27,7 @@ fi;
 
 # Prompt layout
 PS1=
-PS1+="🇯🇲 $RED[$TIME] " # time
+PS1+="$RED[$TIME] " # time
 PS1+="$YELLOW[$USER@" # username
 PS1+="$HOSTSTYLE$HOST$YELLOW:" # host
 #PS1+="$RED$WD_relative$YELLOW] 🌴" # working directory
