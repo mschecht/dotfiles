@@ -30,6 +30,12 @@ alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
 
+# Switch to simple bash prompt
+alias s='export PS1="\u:\w\\$ "'
+
 # Show $PATH in prettier format
 # credit: https://github.com/stephenturner/oneliners
 alias showpath='echo $PATH | tr ":" "\n" | nl'
+
+# Starting anvio virtual env
+alias anvi-activate-master="source ~/virtual-envs/anvio-master/bin/activate"
