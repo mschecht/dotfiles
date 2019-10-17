@@ -33,3 +33,15 @@ alias gp='git push'
 # Show $PATH in prettier format
 # credit: https://github.com/stephenturner/oneliners
 alias showpath='echo $PATH | tr ":" "\n" | nl'
+
+# Anvio stuffs
+alias anvi-activate-dev="source /home/mschechter/opt/anvio/activate.sh"
+alias anvi-activate-master="echo Updating anvio from the git repository;cd /project2/meren/VIRTUAL-ENVS/anvio-master/anvio; git pull; cd -;conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/"
+
+
+#SLURM Aliases that provide information in a useful manner for our clusters
+alias si="sinfo -o \"%20P %5D %14F %8z %10m %10d %11l %32f %N\""
+alias si2="sinfo -o \"%20P %5D %6t %8z %10m %10d %11l %32f %N\""
+alias sq="squeue -o \"%8i %12j %4t %10u %20q %20a %10g %20P %10Q %5D %11l %11L %R\""
+alias q="sinfo --partition=meren -N -o '%N %P %11T %20E %4c %8z %6m %8e %8d %l %L %g'; echo ; squeue --partition=meren -o '%10i %45j %5u %5C %13m %8T %10M %9l %6D %R'"
+alias qe="squeue --user=$USER -o '%10i %45j %5u %5C %13m %8T %10M %9l %6D %R'"
