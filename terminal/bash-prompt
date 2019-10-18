@@ -21,8 +21,8 @@ export WD_relative="$(basename $WD)"
 [ ! -d /Users/mattschechter/.bash/git-aware-prompt ] && git clone git://github.com/jimeh/git-aware-prompt.git ~/.bash/git-aware-prompt
 #[ ! -d /Users/mattschechter/.bash/git-aware-prompt ] && echo "yes"
 
-#export GITAWAREPROMPT=~/.bash/git-aware-prompt # add git-aware-prompt here.
-#source "${GITAWAREPROMPT}/main.sh"
+export GITAWAREPROMPT=~/.bash/git-aware-prompt # add git-aware-prompt here.
+source "${GITAWAREPROMPT}/main.sh"
 
 
 # Highlight the hostname when connected via SSH.
