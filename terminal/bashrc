@@ -52,51 +52,29 @@ log_bash_persistent_history()
 }
 
 # Stuff to do on PROMPT_COMMAND
-run_on_prompt_command()
-{
+run_on_prompt_command() {
         log_bash_persistent_history
 }
 
 export PROMPT_COMMAND="history -a; history -c; history -r; run_on_prompt_command; $PROMPT_COMMAND"
 
-#----------------------------------------
-# Load the shell dotfiles, and then some:
-#----------------------------------------
-# Credit: https://github.com/mathiasbynens/dotfiles/blob/master/.bash_profile#L4-L10
-# * ~/.path can be used to extend `$PATH`.
+#-------------
+# BASH Aliases
+#-------------
+
+# All aliases are here
+#if [ -f ~/.bash-aliases ]; then
+#   . ~/.bash-aliases
+#fi
+
+#---------------
+# BASH Functions
+#---------------
+
 # All BASH functions are here
-# All BASH aliases are here
-# * ~/.extra can be used for other settings you dont want to commit.
-
-for file in ~/.{bash-functions,bash-aliases,bash-prompt}; do
-	if	[ -e "${file}" ] ; then
-		source "${file}"
-	else
-		touch "${file}" # need to fix this section
-		dot=$(basename "${file}")
-		echo "source ~/dotfiles/terminal/"${dot}"" > "${file}"
-		source "${file}"
-	fi;
-done;
-unset file;
-
-#------------------------------------------
-# Add tab completion for many Bash commands
-#------------------------------------------
-# Credit: https://github.com/mathiasbynens/dotfiles/blob/master/.bash_profile#L28-L33
-
-if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-	source "$(brew --prefix)/share/bash-completion/bash_completion";
-elif [ -f /etc/bash_completion ]; then
-	source /etc/bash_completion;
-fi;
-
-#-------------------------------------------------------------------------------
-# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-#-------------------------------------------------------------------------------
-# Credit: https://github.com/mathiasbynens/dotfiles/blob/master/.bash_profile#L40-L41
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
-
+#if [ -f ~/.bash-functions ]; then
+#. ~/.bash-functions
+#fi
 
 #----------
 # Miniconda
@@ -112,16 +90,31 @@ export LANG=en_US.UTF-8
 #----------------------
 # Pointing RStudio to R
 #----------------------
-export RSTUDIO_WHICH_R=/usr/local/Cellar/r/3.5.3/bin/R
+#export RSTUDIO_WHICH_R=/usr/local/Cellar/r/3.5.3/bin/R
 
 #-------------------------
 # Changing HOMEBREW editor
 #-------------------------
 
-export HOMEBREW_EDITOR="/usr/local/bin/vim"
+#export HOMEBREW_EDITOR="/usr/local/bin/vim"
 
 #----------
 # Ruby shit
 #----------
-export PATH=/usr/local/opt/ruby/bin:$PATH
-export PATH=/usr/local/lib/ruby/gems/2.5.0/bin:$PATH
+#export PATH=/usr/local/opt/ruby/bin:$PATH
+#export PATH=/usr/local/lib/ruby/gems/2.5.0/bin:$PATH
+
+#---------------------------
+# Load all terminal dotfiles
+#---------------------------
+for file in ~/.{bash-functions,bash-aliases,bash-prompt}; do
+	if	[ -e "${file}" ] ; then
+		source "${file}"
+	else
+		touch "${file}" # need to fix this section
+		dot=$(basename "${file}")
+		echo "source ~/dotfiles/terminal/"${dot}"" > "${file}"
+		source "${file}"
+	fi;
+done;
+unset file;
