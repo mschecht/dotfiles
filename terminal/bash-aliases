@@ -41,6 +41,10 @@ alias showpath='echo $PATH | tr ":" "\n" | nl'
 alias anvi-activate-dev="source /home/mschechter/opt/anvio/activate.sh"
 alias anvi-activate-master="echo Updating anvio from the git repository;cd /project2/meren/VIRTUAL-ENVS/anvio-master/anvio; git pull; cd -;conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/"
 
+# Open RStudio is correct $WHICH_RSTUDIO_R
+alias Rstudio="open -na Rstudio"
+
+
 #SLURM Aliases that provide information in a useful manner for our clusters
 alias si="sinfo -o \"%20P %5D %14F %8z %10m %10d %11l %32f %N\""
 alias si2="sinfo -o \"%20P %5D %6t %8z %10m %10d %11l %32f %N\""

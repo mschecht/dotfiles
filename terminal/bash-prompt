@@ -40,7 +40,7 @@ PS1+="$YELLOW[$USER@" # username
 PS1+="$HOSTSTYLE$HOST$YELLOW:" # host
 #PS1+="$RED$WD_relative$YELLOW] 🌴" # working directory
 #PS1+="$RED$REL_DIR$YELLOW]$GREEN\$GIT  🌴" # working directory + GIT
-PS1+="$RED$REL_DIR$YELLOW]$GREEN \$git_branch 🌴" # working directory + GIT
+PS1+="$RED$WD$YELLOW]$GREEN \$git_branch 🌴" # working directory + GIT
 PS1+=" $COLOR_DEFAULT" # output
 
 export PS1

@@ -90,7 +90,7 @@ export LANG=en_US.UTF-8
 #----------------------
 # Pointing RStudio to R
 #----------------------
-#export RSTUDIO_WHICH_R=/usr/local/Cellar/r/3.5.3/bin/R
+export RSTUDIO_WHICH_R=/Users/mschechter/miniconda3/bin/r
 
 #-------------------------
 # Changing HOMEBREW editor
