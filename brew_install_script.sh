@@ -45,6 +45,7 @@ PACKAGES=(
     tree
     vim
     wget
+    htop
 )
 
 echo "Installing packages..."
