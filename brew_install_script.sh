@@ -66,6 +66,7 @@ CASKS=(
     slack
     sublime-text
     spotify
+    zotero
 )
 
 echo "Installing cask apps..."
