@@ -64,6 +64,8 @@ CASKS=(
     iterm2
     skype
     slack
+    sublime-text
+    spotify
 )
 
 echo "Installing cask apps..."
