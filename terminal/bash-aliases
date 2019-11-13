@@ -45,8 +45,6 @@ else
 	alias anvi-activate-master="source ~/virtual-envs/anvio-master/bin/activate";
 fi;
 
-alias anvi-activate-dev="source /home/mschechter/opt/anvio/activate.sh"
-
 # Open RStudio is correct $WHICH_RSTUDIO_R
 alias Rstudio="open -na Rstudio"
 
