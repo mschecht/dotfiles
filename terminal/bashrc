@@ -58,24 +58,6 @@ run_on_prompt_command() {
 
 export PROMPT_COMMAND="history -a; history -c; history -r; run_on_prompt_command; $PROMPT_COMMAND"
 
-#-------------
-# BASH Aliases
-#-------------
-
-# All aliases are here
-#if [ -f ~/.bash-aliases ]; then
-#   . ~/.bash-aliases
-#fi
-
-#---------------
-# BASH Functions
-#---------------
-
-# All BASH functions are here
-#if [ -f ~/.bash-functions ]; then
-#. ~/.bash-functions
-#fi
-
 #----------
 # Miniconda
 #----------
@@ -98,14 +80,8 @@ export RSTUDIO_WHICH_R=/Users/mschechter/miniconda3/bin/r
 
 #export HOMEBREW_EDITOR="/usr/local/bin/vim"
 
-#----------
-# Ruby shit
-#----------
-#export PATH=/usr/local/opt/ruby/bin:$PATH
-#export PATH=/usr/local/lib/ruby/gems/2.5.0/bin:$PATH
-
 #---------------------------
-# Load all terminal dotfiles
+# Load all BASH dotfiles
 #---------------------------
 for file in ~/.{bash-functions,bash-aliases,bash-prompt}; do
 	if	[ -e "${file}" ] ; then
