@@ -38,12 +38,15 @@ alias s='export PS1="\u:\w\\$ "'
 alias showpath='echo $PATH | tr ":" "\n" | nl'
 
 # Anvio stuffs
-alias anvi-activate-dev="source /home/mschechter/opt/anvio/activate.sh"
-alias anvi-activate-master="echo Updating anvio from the git repository;cd /project2/meren/VIRTUAL-ENVS/anvio-master/anvio; git pull; cd -;conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/"
+alias anvi-activate-master="source ~/virtual-envs/anvio-master/bin/activate"
+#alias anvi-activate-dev="source ~/github/anvio/activate.sh"
+#alias anvi-activate-master="echo Updating anvio from the git repository;cd /project2/meren/VIRTUAL-ENVS/anvio-master/anvio; git pull; cd -;conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/"
 
 # Open RStudio is correct $WHICH_RSTUDIO_R
 alias Rstudio="open -na Rstudio"
 
+# ssh to UChicago Midway
+alias midway='ssh -L 8180:localhost:8180 -L 8181:localhost:8181 -L 8182:localhost:8182 -L 8183:localhost:8183 -L 8184:localhost:8184 -L 8185:localhost:8185 mschechter@midway2.rcc.uchicago.edu'
 
 #SLURM Aliases that provide information in a useful manner for our clusters
 alias si="sinfo -o \"%20P %5D %14F %8z %10m %10d %11l %32f %N\""

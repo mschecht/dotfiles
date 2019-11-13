@@ -1,5 +1,3 @@
-#!/bin/bash
-############################
 # MAKE TERMINAL GREAT AGAIN!
 ############################
 
@@ -118,3 +116,4 @@ for file in ~/.{bash-functions,bash-aliases,bash-prompt}; do
 	fi;
 done;
 unset file;
+
