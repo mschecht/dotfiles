@@ -38,10 +38,11 @@ alias s='export PS1="\u:\w\\$ "'
 alias showpath='echo $PATH | tr ":" "\n" | nl'
 
 # Anvio stuffs
- if [[ "${SSH_TTY}" ]];
- then
-	alias anvi-activate-master="echo Updating anvio from the git repository;cd /project2/meren/VIRTUAL-ENVS/anvio-master/anvio; git pull; cd -;conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/";
-else
+if [[ "${SSH_TTY}" ]]; # if logged into an SSH (probably Midway)
+then
+	alias anvi-activate-master="echo Updating anvio from the git repository;cd /project2/meren/VIRTUAL-ENVS/anvio-master/anvio; git pull; cd -;conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/"
+	alias anvi-activate-5.5="conda activate /project2/meren/VIRTUAL-ENVS/anvio-5.5";
+else                  # on your local
 	alias anvi-activate-master="source ~/virtual-envs/anvio-master/bin/activate";
 fi;
 
@@ -57,3 +58,6 @@ alias si2="sinfo -o \"%20P %5D %6t %8z %10m %10d %11l %32f %N\""
 alias sq="squeue -o \"%8i %12j %4t %10u %20q %20a %10g %20P %10Q %5D %11l %11L %R\""
 alias q="sinfo --partition=meren -N -o '%N %P %11T %20E %4c %8z %6m %8e %8d %l %L %g'; echo ; squeue --partition=meren -o '%10i %45j %5u %5C %13m %8T %10M %9l %6D %R'"
 alias qe="squeue --user=$USER -o '%10i %45j %5u %5C %13m %8T %10M %9l %6D %R'"
+
+# Play sounds!
+alias bn="mpg123 ~/opt/brown_noise/Smoothed_Brown_Noise.mp3"
