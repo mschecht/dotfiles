@@ -18,7 +18,7 @@ export WD_relative="$(basename $WD)"
 
 # Set up git-aware prompt
 # credit: https://github.com/jimeh/git-aware-prompt
-[ ! -d /Users/mattschechter/.bash/git-aware-prompt ] && git clone git://github.com/jimeh/git-aware-prompt.git ~/.bash/git-aware-prompt
+[ ! -d /Users/mschechter/.bash/git-aware-prompt ] && git clone git://github.com/jimeh/git-aware-prompt.git ~/.bash/git-aware-prompt
 #[ ! -d /Users/mattschechter/.bash/git-aware-prompt ] && echo "yes"
 
 export GITAWAREPROMPT=~/.bash/git-aware-prompt # add git-aware-prompt here.
