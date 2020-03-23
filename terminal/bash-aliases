@@ -61,3 +61,6 @@ alias qe="squeue --user=$USER -o '%10i %45j %5u %5C %13m %8T %10M %9l %6D %R'"
 
 # Play sounds!
 alias bn="printf 'Ugh the lab is so loud... /n';mpg123 ~/opt/brown_noise/Smoothed_Brown_Noise.mp3"
+
+# Meren lab essentials
+alias cdm="cd /project2/meren/"
