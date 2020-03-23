@@ -25,19 +25,22 @@ silent! if plug#begin()
     Plug	'vim-syntastic/syntastic'
     Plug	'godlygeek/tabular'
     Plug	'airblade/vim-gitgutter'
+    Plug	'ctrlpvim/ctrlp.vim'
+    Plug	'davidhalter/jedi-vim'
+    Plug	'severin-lemaignan/vim-minimap'
+    Plug	'ervandew/supertab'
+    Plug	'jiangmiao/auto-pairs'
+    Plug	'preservim/nerdcommenter'
+    Plug	'tomasr/molokai'
 
   call plug#end()
 endif
+" ============================
 
 
 " Adjusting how Vim looks
 set number
 set relativenumber
-
-" Scroll through Ctrl+n autocomplete with jk
-"inoremap pumvisible() ?	"\<C-n>" : "j"
-"inoremap pumvisible() ?	"\<C-p>" : "k"
-
 set wildmode=longest,list,full
 set wildmenu
 set smartindent
@@ -49,13 +52,44 @@ set softtabstop=4
 set shiftwidth=4
 set smarttab
 set backspace=2
-
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set list
-
+set background=dark
+set encoding=utf-8
+set term=screen-256color
 syntax on
 
-set background=dark
+"
+" Colors!
+
+"Jedi vim stufs
+let g:jedi#show_call_signitures = "" 
+let g:jedi#popup_select_first = 0
+
+
+" Highlight all instances of word under cursor, when idle.
+" Useful when studying strange source code.
+" Type z/ to toggle highlighting on/off.
+nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+function! AutoHighlightToggle()
+    let @/ = ''
+    if exists('#auto_highlight')
+        au! auto_highlight
+        augroup! auto_highlight
+        setl updatetime=4000
+        echo 'Highlight current word: off'
+        return 0
+    else
+        augroup auto_highlight
+            au!
+            au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
+        augroup end
+        setl updatetime=500
+        echo 'Highlight current word: ON'
+        return 1
+    endif
+endfunction
+
 
 " Allow copying to system clipboard
 set clipboard=unnamed
@@ -70,59 +104,29 @@ set mouse=a
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" Instant Markdown
-" manually start markdown preview in browser
-let g:instant_markdown_autostart = 0
-:map <C-i> :InstantMarkdownPreview
-
-" Multipule cursors
-let g:multi_cursor_use_default_mapping=0
-
-" Default mapping
-let g:multi_cursor_start_word_key      = '<C-m>'
-let g:multi_cursor_select_all_word_key = '<A-n>'
-let g:multi_cursor_start_key           = 'g<C-n>'
-let g:multi_cursor_select_all_key      = 'g<A-n>'
-let g:multi_cursor_next_key            = '<C-m>'
-let g:multi_cursor_prev_key            = '<C-p>'
-let g:multi_cursor_skip_key            = '<C-x>'
-" let g:multi_cursor_quit_key            = '<Esc>'
-
-" plasticboy/vim-markdown disable text folding 
-let g:vim_markdown_folding_disabled = 1
-
-"
 " Python stuff
-"
 " Credit: https://realpython.com/vim-and-python-a-match-made-in-heaven/
 
 au BufNewFile,BufRead *.py set syntax=python
-
-" PEP8
-"au BufNewFile,BufRead *.py
-"    \ set tabstop=4
-"    \ set softtabstop=4
-"    \ set shiftwidth=4
-"    \ set textwidth=79
-"    \ set expandtab
-"    \ set autoindent
-"    \ set fileformat=unix
 
 " SNAKEMAKE syntax highlighting
 " Credit: https://snakemake.readthedocs.io/en/stable/project_info/faq.html#how-do-i-enable-syntax-highlighting-in-vim-for-snakefiles
 au BufNewFile,BufRead Snakefile set syntax=snakemake
 au BufNewFile,BufRead *.smk set syntax=snakemake
 
-"set encoding=utf-8
 
 let python_highlight_all=1
-
-let g:powerline_pycmd = 'py3'
 
 " Automatic reloading of vimrc when you save
 autocmd! bufwritepost .vimrc source %
 
+" QUICKLY edit and reload vim WITHIN vim :)
 " edit vimrc quickly
 nnoremap <leader>ev :split ~/dotfiles/vim/vimrc<cr>
 
+" Reload vimrc configuration file nnoremap <Leader>vr :source $MYVIMRC<CR>
+nnoremap <Leader>rv :source $MYVIMRC<cr>
 
+" ctrlp.vim use a custom file listing command:
+let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
