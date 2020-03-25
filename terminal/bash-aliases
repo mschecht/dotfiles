@@ -6,7 +6,6 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias vi='vim'
 
-
 # add color to grep
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -17,6 +16,11 @@ alias h="history"
 alias h1="history 10"
 alias h2="history 20"
 alias h3="history 30"
+
+# tmux
+alias "tmuxls"="tmux list-sessions"
+#alias "tmux new"="tmux -2 new-session bash" # -2 parameter is for the shell to look normal look here: github.com/tmux/tmux/wiki/FAQ#user-content-how-do-i-use-a-256-colour-terminal
+											# bash parameter is so your path gets looked at first when tmux opens, others you wont get the right python etc
 
 # wget
 alias wget="wget -c"
@@ -59,7 +63,8 @@ alias midway='ssh -L -Y 8180:localhost:8180 -L 8181:localhost:8181 -L 8182:local
 alias si="sinfo -o \"%20P %5D %14F %8z %10m %10d %11l %32f %N\""
 alias si2="sinfo -o \"%20P %5D %6t %8z %10m %10d %11l %32f %N\""
 alias sq="squeue -o \"%8i %12j %4t %10u %20q %20a %10g %20P %10Q %5D %11l %11L %R\""
-alias q="sinfo --partition=meren -N -o '%N %P %11T %20E %4c %8z %6m %8e %8d %l %L %g'; echo ; squeue --partition=meren -o '%10i %45j %5u %5C %13m %8T %10M %9l %6D %R'"
+alias q="sinfo --partition=meren -N -o '%N %P %11T %20E %C %6m %8e %8d'; echo ; squeue --partition=meren -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; echo ; squeue --partition=meren --user=$(id -u -n) -O 'arrayjobid:13,name,nodelist,stdout:120'"
+
 alias qe="squeue --user=$USER -o '%10i %45j %5u %5C %13m %8T %10M %9l %6D %R'"
 
 # Play sounds!
