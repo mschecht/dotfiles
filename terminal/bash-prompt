@@ -17,7 +17,9 @@ export WD="\w" # working directory
 
 # Set up git-aware prompt
 # credit: https://github.com/jimeh/git-aware-prompt
-[ ! -d /Users/mschechter/.bash/git-aware-prompt ] && git clone git://github.com/jimeh/git-aware-prompt.git ~/.bash/git-aware-prompt
+if [ ! -d ~/.bash/git-aware-prompt ]; then
+	git clone git://github.com/jimeh/git-aware-prompt.git ~/.bash/git-aware-prompt
+fi
 
 export GITAWAREPROMPT=~/.bash/git-aware-prompt # add git-aware-prompt here.
 source "${GITAWAREPROMPT}/main.sh"
