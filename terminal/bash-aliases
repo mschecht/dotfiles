@@ -11,6 +11,11 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+# quickly edit configuratiosn
+alias eb='vim ~/dotfiles/terminal'
+alias et='vim ~/dotfiles/tmux/tmux.conf'
+alias ev='vim ~/dotfiles/vim/vimrc'
+
 # History commands
 alias h="history"
 alias h1="history 10"
