@@ -57,7 +57,7 @@ fi;
 alias Rstudio="open -na Rstudio"
 
 # ssh to UChicago Midway
-alias midway='ssh -L -Y 8180:localhost:8180 -L 8181:localhost:8181 -L 8182:localhost:8182 -L 8183:localhost:8183 -L 8184:localhost:8184 -L 8185:localhost:8185 mschechter@midway2.rcc.uchicago.edu'
+alias midway='ssh -L  8180:localhost:8180 -L 8181:localhost:8181 -L 8182:localhost:8182 -L 8183:localhost:8183 -L 8184:localhost:8184 -L 8185:localhost:8185 mschechter@midway2.rcc.uchicago.edu'
 
 #SLURM Aliases that provide information in a useful manner for our clusters
 alias si="sinfo -o \"%20P %5D %14F %8z %10m %10d %11l %32f %N\""
