@@ -1,5 +1,15 @@
+############################
 # MAKE TERMINAL GREAT AGAIN!
 ############################
+
+#---------------------------------------------------------------------------
+# Global variables to change functionality depending on which computer im on
+#---------------------------------------------------------------------------
+export my_uchicago_macbook="MED42040.local"
+export midway_server="midway2-login1.rcc.local:midway2-login2.rcc.local:midway-l16b-28.rcc.local:midway2-0701.rcc.local:midway2-0705.rcc.local:midway2-0706.rcc.local"
+
+# welcome message
+bash ~/.bash-welcome
 
 #-----------------
 # LS color options
@@ -7,13 +17,12 @@
 
 # Here is a good link to changing colors: https://geoff.greer.fm/lscolors/
 
-OS=$(uname) # Run `uname` command to get current OS
-
-# Run necessary colors setting for IOS or Linux
-if [[ "$OS" == "Linux" ]]; then
-	export LSCOLORS="di=1;36:ln=1;35:so=1;32:pi=1;33:ex=1;31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=34;43" # Linux
-elif [[ "$OS" == "Darwin" ]]; then
-    export CLICOLOR=2    
+# Load various things depending on which computer I'm on
+if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
+	export LSCOLORS="di=1;36:ln=1;35:so=1;32:pi=1;33:ex=1;31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=34;43" # colors 
+	module load midway2; module load tmux/current # the correct tmux
+elif [[ "$my_uchicago_macbook" == "$(uname -n)" ]]; then
+    export CLICOLOR=2
 	export LSCOLORS=GxFxCxDxBxegedabagaced # IOS
 fi
 
@@ -92,4 +101,3 @@ for file in ~/.{bash-functions,bash-aliases,bash-prompt}; do
 	fi;
 done;
 unset file;
-
