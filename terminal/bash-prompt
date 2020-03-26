@@ -34,7 +34,6 @@ fi;
 
 # Prompt layout
 PS1=
-#PS1+="$RED($(basename "$CONDA_PREFIX")) " # one day I will fix conda env variable to be basename
 PS1+="$YELLOW[$USER@" # username
 PS1+="$HOSTSTYLE$HOST$YELLOW" # host
 PS1+="$YELLOW:$RED$REL_DIR$YELLOW]$RED \$git_branch 🌴" # working directory + GIT
