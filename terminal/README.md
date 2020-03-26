@@ -50,9 +50,11 @@ echo "source ~/dotfiles/terminal/bashrc" > .bashrc
 
 3. Make some extra files to point to where your terminal configs are
 ```
-echo "source ~/dotfiles/terminal/bash-aliases" > .bash-aliases
+echo "source ~/dotfiles/terminal/bash-aliases" > ~/.bash-aliases
 
-echo "source ~/dotfiles/terminal/bash-functions" > .bash-functions
+echo "source ~/dotfiles/terminal/bash-welcome" > ~/.bash-welcome
 
-echo "source ~/dotfiles/terminal/bash-prompt" > .bash-prompt
+echo "source ~/dotfiles/terminal/bash-functions" > ~/.bash-functions
+
+echo "source ~/dotfiles/terminal/bash-prompt" > ~/.bash-prompt
  ```
