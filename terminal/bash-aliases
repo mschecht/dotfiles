@@ -24,8 +24,6 @@ alias h3="history 30"
 
 # tmux
 alias "tmuxls"="tmux list-sessions"
-#alias "tmux new"="tmux -2 new-session bash" # -2 parameter is for the shell to look normal look here: github.com/tmux/tmux/wiki/FAQ#user-content-how-do-i-use-a-256-colour-terminal
-											# bash parameter is so your path gets looked at first when tmux opens, others you wont get the right python etc
 
 # wget
 alias wget="wget -c"

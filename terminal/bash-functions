@@ -10,6 +10,8 @@ doi2bib ()
 # create .tar.gz
 targz() { tar -zcvf $1.tar.gz $1; rm -r $1; }
 
+tmuxnew() { tmux new-session -s $1 bash; }
+
 # extract *ANY* compressed file
 extract ()
 {
