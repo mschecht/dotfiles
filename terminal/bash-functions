@@ -91,3 +91,13 @@ init_anvio_stable () {
 	conda activate anvio-6.1
 	echo "anvi'o 6.1 is now active. If you need master, please run anvi-activate-master."
 }
+
+init_anvio_dev () {
+	{
+		deactivate && conda deactivate
+	} &> /dev/null
+	source ~/virtual-envs/anvio-master/bin/activate
+	echo "anvi'o master is now active. Confirm you have the right branch!."
+	echo ""
+	echo "go to ~/github/anvio the git checkout the branch you wan to work with :)"
+}
