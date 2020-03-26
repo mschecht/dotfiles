@@ -1,9 +1,11 @@
 if [[ "$my_uchicago_macbook" =~ "$(uname -n)"  ]]; then
 	echo ""
+	echo "Location:"
 	echo "You're on your local!"
 	echo ""
 elif [[ "$midway_server" =~ "$(uname -n)"  ]]; then
 	echo ""
+	echo "Location:"
 	echo "Your're on midway!"
 	echo ""
 fi
