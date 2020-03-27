@@ -1,4 +1,5 @@
 # essentials
+alias ls='ls --color=auto'
 alias ll='ls -lgh'
 alias la='ls -Fhla'
 alias ld='ls -hlt'
