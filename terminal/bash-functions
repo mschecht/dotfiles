@@ -96,15 +96,13 @@ init_anvio_dev () {
 	{
 		deactivate && conda deactivate
 	} &> /dev/null
+	echo "Updating anvio from the git repository"
+	cd ~/github/anvio; git pull; cd -
 	conda activate anvio-dev
 	source ~/virtual-envs/anvio-dev/bin/activate
-	echo "anvi'o master is now active. Confirm you have the right branch!."
-	echo ""
-	echo "go to ~/github/anvio the git checkout the branch you wan to work with :)"
 }
 
 # makes alias for these cool functions
 alias ds=deactivate_smart
 alias as=init_anvio_stable
-alias am=init_anvio_stable
-alias am= 
+alias am=init_anvio_dev
