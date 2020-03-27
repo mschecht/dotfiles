@@ -56,6 +56,13 @@ else                  # on your local
 	alias am="conda activate anvio-master;source ~/virtual-envs/anvio-master/bin/activate";
 fi
 
+# Edit anvio fast
+if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
+	vi ~/github/anvio
+elif [[ "$my_uchicago_macbook" == "$(uname -n)" ]]; then
+	alias ea="subl ~/github/anvio"
+fi
+
 # Open RStudio is correct $WHICH_RSTUDIO_R
 alias Rstudio="open -na Rstudio"
 
