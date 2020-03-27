@@ -58,7 +58,7 @@ fi
 
 # Edit anvio fast
 if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
-	vi ~/github/anvio
+	alias ea="vi ~/github/anvio"
 elif [[ "$my_uchicago_macbook" == "$(uname -n)" ]]; then
 	alias ea="subl ~/github/anvio"
 fi
