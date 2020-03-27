@@ -108,4 +108,4 @@ init_anvio_dev () {
 # makes alias for these cool functions
 alias ds=deactivate_smart
 alias as=init_anvio_stable
-alias am=init_anvio_dev
+alias ad=init_anvio_dev
