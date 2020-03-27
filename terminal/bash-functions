@@ -101,3 +101,9 @@ init_anvio_dev () {
 	echo ""
 	echo "go to ~/github/anvio the git checkout the branch you wan to work with :)"
 }
+
+# makes alias for these cool functions
+alias ds=deactivate_smart
+alias as=init_anvio_stable
+alias am=init_anvio_stable
+alias am= 
