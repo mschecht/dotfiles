@@ -5,7 +5,7 @@
 #---------------------------------------------------------------------------
 # Global variables to change functionality depending on which computer im on
 #---------------------------------------------------------------------------
-export my_uchicago_macbook="MED42040.local"
+export my_uchicago_macbook="MED42040.lan"
 export midway_server="midway2-login1.rcc.local:midway2-login2.rcc.local:midway-l16b-28.rcc.local:midway2-0701.rcc.local:midway2-0705.rcc.local:midway2-0706.rcc.local"
 
 # welcome message
