@@ -96,7 +96,8 @@ init_anvio_dev () {
 	{
 		deactivate && conda deactivate
 	} &> /dev/null
-	source ~/virtual-envs/anvio-master/bin/activate
+	conda activate anvio-dev
+	source ~/virtual-envs/anvio-dev/bin/activate
 	echo "anvi'o master is now active. Confirm you have the right branch!."
 	echo ""
 	echo "go to ~/github/anvio the git checkout the branch you wan to work with :)"
