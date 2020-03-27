@@ -76,7 +76,7 @@ zhead() {
 	zcat $1 | head
 }
 
-# anvio stuff
+# anvio stuffs, inspired by here: http://merenlab.org/2016/06/26/installation-v2/#following-the-active-codebase-youre-a-wizard-arry
 deactivate_smart () {
 	echo "Deactivating"
 	{
@@ -102,7 +102,7 @@ init_anvio_dev () {
 	echo "Activating virtualenv: anvio-ev & updating anvio from git repository"
 	echo ""
 	source ~/virtual-envs/anvio-dev/bin/activate
-	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE$HOST$YELLOW:$RED$REL_DIR$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
+	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$REL_DIR$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
 
 # makes alias for these cool functions
