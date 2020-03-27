@@ -100,7 +100,7 @@ export LANG=en_US.UTF-8
 #---------------------------
 # Load all BASH dotfiles
 #---------------------------
-for file in ~/.{bash-functions,bash-aliases,bash-prompt}; do
+for file in ~/.{bash-prompt,bash-functions,bash-aliases}; do
 	if	[ -e "${file}" ] ; then
 		source "${file}"
 	else

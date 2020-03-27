@@ -49,13 +49,6 @@ alias s='export PS1="\u:\w\\$ "'
 alias showpath='echo $PATH | tr ":" "\n" | nl'
 
 # Anvio stuffs
-if [[ "${SSH_TTY}" ]]; # if logged into an SSH (probably Midway)
-then
-	#alias anvi-activate-master="echo Updating anvio from the git repository;cd /project2/meren/VIRTUAL-ENVS/anvio-master/anvio; git pull; cd -;conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/"
-	alias anvi-activate-5.5="conda activate /project2/meren/VIRTUAL-ENVS/anvio-5.5";
-else                  # on your local
-	alias am="conda activate anvio-master;source ~/virtual-envs/anvio-master/bin/activate";
-fi;
 
 # Open RStudio is correct $WHICH_RSTUDIO_R
 alias Rstudio="open -na Rstudio"
