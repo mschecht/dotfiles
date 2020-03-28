@@ -1,7 +1,7 @@
 # essentials
-alias ls='ls --color=auto'
-alias ll='ls -lgh'
-alias la='ls -Fhla'
+alias ll='ls -G'
+alias ll='ls -lh'
+alias la='ls -hla'
 alias ld='ls -hlt'
 alias ..='cd ..'
 alias ...='cd ../../'
@@ -60,7 +60,7 @@ fi
 # Edit anvio fast
 if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
 	alias ea="vi ~/github/anvio"
-elif [[ "$my_uchicago_macbook" == "$(uname -n)" ]]; then
+elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
 	alias ea="subl ~/github/anvio"
 fi
 
