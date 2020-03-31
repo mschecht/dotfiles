@@ -31,6 +31,7 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
 	module load midway2; module load tmux/current # the correct tmux
 elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
 	export LSCOLORS=GxFxCxDxBxegedabagaced # IOS
+	export CLICOLOR=2
 fi
 
 
