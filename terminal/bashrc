@@ -28,6 +28,8 @@ cd ~/dotfiles && git pull && cd -
 # Load various things depending on which computer I'm on
 if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
 	export LSCOLORS="di=1;36:ln=1;35:so=1;32:pi=1;33:ex=1;31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=34;43" # colors 
+	echo ""
+	echo "Loading up tmux!"
 	module load midway2; module load tmux/current # the correct tmux
 elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
 	export LSCOLORS=GxFxCxDxBxegedabagaced # IOS

@@ -76,6 +76,17 @@ zhead() {
 	zcat $1 | head
 }
 
+
+# tmux function
+
+tmux-dev () {
+	tmux new-session bash
+	tmux split-window -v 'ipython'
+	tmux split-window -h
+	tmux new-window 'mutt'
+	tmux -2 attach-session -d
+}
+
 # anvio stuffs, inspired by here: http://merenlab.org/2016/06/26/installation-v2/#following-the-active-codebase-youre-a-wizard-arry
 deactivate_smart () {
 	echo "Deactivating"
