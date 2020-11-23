@@ -10,7 +10,7 @@ export COLOR_d="\[\033[0;34m\]"
 export COLOR_DEFAULT="\[\e[0m\]"
 export PROMPT_DIRTRIM=8
 export TIME="\t"
-export USER="\u"
+export ME="\u"
 export HOST="\h"
 export REL_DIR='\W'
 export WD="\w" # working directory
@@ -34,7 +34,7 @@ fi;
 
 # Prompt layout
 PS1=
-PS1+="$YELLOW[$USER@" # username
+PS1+="$YELLOW[$ME@" # username
 PS1+="$HOSTSTYLE$HOST$YELLOW" # host
 PS1+="$YELLOW:$RED$REL_DIR$YELLOW]$RED \$git_branch 🌴" # working directory + GIT
 PS1+=" $COLOR_DEFAULT" # output
