@@ -119,7 +119,12 @@ init_anvio_master () {
 	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$REL_DIR$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
 
+init_anvio_dev () {
+	conda activate /project2/meren/PEOPLE/mschechter/conda-envs/anvio-mschechter
+}
+
 # makes alias for these cool functions
 alias ds=deactivate_smart
 alias as=init_anvio_stable
 alias am=init_anvio_master
+alias ad=init_anvio_dev
