@@ -1,3 +1,6 @@
+# this is where I store my binaries when I don't have write access,
+export PATH=$PATH:~/bin
+
 # pull from yadm before anything
 if hash yadm 2>/dev/null; then
     yadm pull
