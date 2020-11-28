@@ -70,6 +70,7 @@ CASKS=(
     zotero
     whatsapp
     inkscape
+	selfcontrol
 )
 
 echo "Installing cask apps..."
