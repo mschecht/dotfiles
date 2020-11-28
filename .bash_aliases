@@ -76,3 +76,6 @@ alias bn="printf 'Ugh the lab is so loud... /n';mpg123 ~/opt/brown_noise/Smoothe
 
 # Meren lab essentials
 alias cdm="cd /project2/meren/"
+
+# Use Spacevim cause it's better
+alias vim="vim -u ~/.SpaceVim/vimrc"
