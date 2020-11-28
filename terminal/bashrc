@@ -13,11 +13,12 @@ bash ~/.bash-welcome
 
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
-
-# Make sure dotfiles are updates
-echo "Updating dotfiles..."
-echo ""
-cd ~/dotfiles && git pull && cd - 
+#if shopt -q login_shell; then
+	# Make sure dotfiles are updates
+#	echo "Updating dotfiles..."
+#	echo ""
+#	cd ~/dotfiles && git pull && cd - 
+#fi
 
 #-----------------
 # LS color options
@@ -31,6 +32,7 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
 	echo ""
 	echo "Loading up tmux!"
 	module load midway2; module load tmux/current # the correct tmux
+	source /project2/meren/VIRTUAL-ENVS/shared/00_load_all.sh
 elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
 	export LSCOLORS=GxFxCxDxBxegedabagaced # IOS
 	export CLICOLOR=2
@@ -94,8 +96,9 @@ export LANG=en_US.UTF-8
 #----------------------
 # Pointing RStudio to R
 #----------------------
+# This has never worked and is so irritating: https://support.rstudio.com/hc/en-us/articles/200486138-Changing-R-versions-for-RStudio-desktop
 #export RSTUDIO_WHICH_R=/Users/mschechter/miniconda3/bin/r
-
+#export RSTUDIO_WHICH_R=/Users/mschechter/miniconda3/envs/anvio-master/bin/r
 #-------------------------
 # Changing HOMEBREW editor
 #-------------------------
