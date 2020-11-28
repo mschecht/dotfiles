@@ -34,9 +34,9 @@ fi;
 
 # Prompt layout
 PS1=
-PS1+="$YELLOW[$USER@" # username
+PS1+="$YELLOW[mss@" # username
 PS1+="$HOSTSTYLE$HOST$YELLOW" # host
-PS1+="$YELLOW:$RED$REL_DIR$YELLOW]$RED \$git_branch 🌴" # working directory + GIT
+PS1+="$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴" # working directory + GIT
 PS1+=" $COLOR_DEFAULT" # output
 
 export PS1
