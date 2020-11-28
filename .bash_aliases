@@ -1,4 +1,4 @@
-bash-aliases# essentials
+# essentials
 alias ll='ls -lh'
 alias la='ls -hla'
 alias ld='ls -hlt'
