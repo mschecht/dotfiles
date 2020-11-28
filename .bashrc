@@ -30,8 +30,8 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
 	export LSCOLORS="di=1;36:ln=1;35:so=1;32:pi=1;33:ex=1;31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=34;43" # colors 
 	echo ""
-	echo "Loading up tmux!"
-	module load midway2; module load tmux/current # the correct tmux
+	echo "Loading up modules!"
+	module load midway2; module load tmux/current; module load python/anaconda-2020.02 # the correct tmux
 	source /project2/meren/VIRTUAL-ENVS/shared/00_load_all.sh
 elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
 	export LSCOLORS=GxFxCxDxBxegedabagaced # IOS
