@@ -100,9 +100,9 @@ init_anvio_stable () {
 		deactivate && conda deactivate
 	} &> /dev/null
 	export PATH="/Users/$USER/miniconda3/bin:$PATH"
-	conda activate anvio-6.1
-	echo "anvi'o 6.1 is now active. If you need master, please run anvi-activate-master."
-	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$REL_DIR$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
+	conda activate anvio-6.2
+	echo "anvi'o 6.2 is now active. If you need master, please run anvi-activate-master."
+	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
 
 init_anvio_master () {
@@ -116,7 +116,7 @@ init_anvio_master () {
 	echo "Activating virtualenv: anvio-master & updating anvio from git repository"
 	echo ""
 	source ~/virtual-envs/anvio-master/bin/activate
-	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$REL_DIR$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
+	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
 
 # makes alias for these cool functions
