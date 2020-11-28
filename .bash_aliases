@@ -12,6 +12,12 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+# yadm commands
+alias yu="yadm add -u; yadm commit -m '$(date)'; yadm push origin master"
+alias ys="yadm status"
+alias yd="yadm diff"
+alias yp="yadm pull"
+
 # quickly edit configuratiosn
 alias eb='vim ~/dotfiles/terminal'
 alias et='vim ~/dotfiles/tmux/tmux.conf'
