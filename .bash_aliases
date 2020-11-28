@@ -36,7 +36,7 @@ alias wget="wget -c"
 alias keep="fc -ln -1 | sed 's/^\s\+//'>>COMAND-HIST"
 
 # reload .bash
-alias reload_rc='. ~/.bashrc'
+alias reload_rc='. ~/.bash_profile'
 
 # git
 alias gs='git status'
