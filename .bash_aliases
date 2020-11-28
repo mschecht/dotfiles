@@ -19,9 +19,9 @@ alias yd="yadm diff"
 alias yp="yadm pull"
 
 # quickly edit configuratiosn
-alias eb='vim ~/dotfiles/terminal'
-alias et='vim ~/dotfiles/tmux/tmux.conf'
-alias ev='vim ~/dotfiles/vim/vimrc'
+alias eb='vim ~/.bashrc'
+alias et='vim ~/.tmux.conf'
+alias ev='vim ~/.SpaceVim.d/init.toml'
 
 # History commands
 alias h="history"
