@@ -13,13 +13,6 @@ bash ~/.bash_welcome
 
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
-#if shopt -q login_shell; then
-	# Make sure dotfiles are updates
-#	echo "Updating dotfiles..."
-#	echo ""
-#	cd ~/dotfiles && git pull && cd - 
-#fi
-
 #-----------------
 # LS color options
 #-----------------
@@ -90,7 +83,6 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 #---------
 # Language
 #---------
-
 export LANG=en_US.UTF-8
 
 #----------------------

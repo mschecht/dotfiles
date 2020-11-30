@@ -26,6 +26,8 @@
     filetree_direction = "left"
     filemanager = "nerdtree"
     auto_disable_touchpad = false
+    bootstrap_after = "config#after"                                                                                 
+    bootstrap_before = "config#before"
 
 # Enable autocomplete layer
 [[layers]]

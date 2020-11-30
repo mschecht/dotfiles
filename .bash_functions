@@ -73,7 +73,7 @@ function jllocal {
 
 # Zcat + head 
 zhead() {
-	zcat $1 | head
+  head <(zcat $1)
 }
 
 
@@ -124,7 +124,7 @@ init_anvio_dev () {
 }
 
 # makes alias for these cool functions
-alias ds=deactivate_smart
-alias as=init_anvio_stable
-alias am=init_anvio_master
-alias ad=init_anvio_dev
+# alias ds=deactivate_smart
+# alias as=init_anvio_stable
+# alias am=init_anvio_master
+# alias ad=init_anvio_dev
