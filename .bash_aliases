@@ -6,6 +6,7 @@ alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 alias vi='vim'
+alias col="column -t"
 
 # add color to grep.... PERTY COLORSS
 alias grep='grep --color=auto'
