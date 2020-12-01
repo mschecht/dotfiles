@@ -26,9 +26,38 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
 	echo "Loading up modules!"
 	module load midway2; module load tmux/current; module load python/anaconda-2020.02 # the correct tmux
 	source /project2/meren/VIRTUAL-ENVS/shared/00_load_all.sh
+
+  # !! Contents within this block are managed by 'conda init' !!
+  __conda_setup="$('/software/Anaconda3-5.3.0-el7-x86_64/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/software/Anaconda3-5.3.0-el7-x86_64/etc/profile.d/conda.sh" ]; then
+            . "/software/Anaconda3-5.3.0-el7-x86_64/etc/profile.d/conda.sh"
+        else
+            export PATH="/software/Anaconda3-5.3.0-el7-x86_64/bin:$PATH"
+        fi
+    fi
+  unset __conda_setup
+
 elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
 	export LSCOLORS=GxFxCxDxBxegedabagaced # IOS
 	export CLICOLOR=2
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/Users/evan/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/Users/evan/anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/Users/evan/anaconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/Users/evan/anaconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+
 fi
 
 
