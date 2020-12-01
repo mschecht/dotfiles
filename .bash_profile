@@ -13,7 +13,7 @@ fi
 
 # load all the good stuff
 if [ -f ~/.bashrc ]; then
-	source .bashrc
+	source ~/.bashrc
 fi
 
 # >>> conda initialize >>>

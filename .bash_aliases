@@ -7,7 +7,7 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias vi='vim'
 alias col="column -t"
-lias h="head -n"
+alias h="head -n"
 alias t="tail -n"
 
 # add color to grep.... PERTY COLORSS
@@ -45,7 +45,7 @@ alias wget="wget -c"
 # alias keep="fc -ln -1 | sed 's/^\s\+//'>>COMAND-HIST"
 
 # reload .bash
-alias reload_rc='. ~/.bash_profile'
+alias reload_rc='source ~/.bash_profile'
 
 # git
 alias gs='git status'
