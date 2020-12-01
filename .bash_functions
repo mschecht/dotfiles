@@ -122,9 +122,3 @@ init_anvio_master () {
 init_anvio_dev () {
 	conda activate /project2/meren/PEOPLE/mschechter/conda-envs/anvio-mschechter
 }
-
-# makes alias for these cool functions
-# alias ds=deactivate_smart
-# alias as=init_anvio_stable
-# alias am=init_anvio_master
-# alias ad=init_anvio_dev

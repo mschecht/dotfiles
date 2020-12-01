@@ -65,6 +65,7 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
 	alias aam="echo Updating anvio from the git repository;cd /project2/meren/VIRTUAL-ENVS/anvio-master/anvio; git pull; cd -;conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/"
 	alias anvi-activate-5.5="conda activate /project2/meren/VIRTUAL-ENVS/anvio-5.5";
   alias aad=init_anvio_dev
+  alias ds=deactivate_smart
 
   # Edit anvio fast
 	alias eanvio="cd /project2/meren/PEOPLE/mschechter/github/anvio"
