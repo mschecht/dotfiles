@@ -71,10 +71,19 @@ function jllocal {
 # credit: http://merenlab.org/2015/11/28/visualizing-from-a-server/
 #
 
-# Zcat + head 
-zhead() {
-  head <(zcat $1)
-}
+if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
+
+  # Zcat + head 
+  zhead() {
+    zcat $1 | head
+  }
+elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
+
+  # Zcat + head 
+  zhead() {
+    gzcat $1 | head
+  }
+fi
 
 
 # tmux function
