@@ -9,6 +9,7 @@ alias vi='vim'
 alias col="column -t"
 alias h="head -n"
 alias t="tail -n"
+alias tf="tail -F"
 
 # add color to grep.... PERTY COLORSS
 alias grep='grep --color=auto'
