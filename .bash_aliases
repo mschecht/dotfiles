@@ -9,6 +9,7 @@ alias vi='vim'
 alias col="column -t"
 alias h="head -n"
 alias t="tail -n"
+alias tf="tail -F"
 
 # add color to grep.... PERTY COLORSS
 alias grep='grep --color=auto'
@@ -66,7 +67,7 @@ alias ds=deactivate_smart
 if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
   
   # Activate anvio
-	alias aam="echo Updating anvio from the git repository;cd /project2/meren/VIRTUAL-ENVS/anvio-master/anvio; git pull; cd -;conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/"
+	alias aam="conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/"
 	alias anvi-activate-5.5="conda activate /project2/meren/VIRTUAL-ENVS/anvio-5.5";
   alias aad=init_anvio_dev
 
