@@ -43,7 +43,6 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
 elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
   export LSCOLORS=GxFxCxDxBxegedabagaced # IOS
   export CLICOLOR=2
-
 fi
 
 
