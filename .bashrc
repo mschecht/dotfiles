@@ -9,7 +9,9 @@ export my_uchicago_macbook="MED42040.lan:MED42040.local:MED42040.local"
 export midway_server="midway2-login1.rcc.local:midway2-login2.rcc.local:midway-l16b-28.rcc.local:midway2-0701.rcc.local:midway2-0705.rcc.local:midway2-0706.rcc.local"
 
 # welcome message
-bash ~/.bash_welcome
+if shopt -q login_shell; then
+  bash ~/.bash_welcome
+fi
 
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
@@ -21,13 +23,11 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # Load various things depending on which computer I'm on
 if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
-	export LSCOLORS="di=1;36:ln=1;35:so=1;32:pi=1;33:ex=1;31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=34;43" # colors 
-	echo ""
-	echo "Loading up modules!"
-	module load midway2; module load tmux/current; module load python/anaconda-2020.02 # the correct tmux
-	source /project2/meren/VIRTUAL-ENVS/shared/00_load_all.sh
+  export LSCOLORS="di=1;36:ln=1;35:so=1;32:pi=1;33:ex=1;31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=34;43" # colors
+  module load midway2; module load tmux/current; module load python/anaconda-2020.02 # the correct tmux
+  source /project2/meren/VIRTUAL-ENVS/shared/00_load_all.sh
 
-  # !! Contents within this block are managed by 'conda init' !!
+  !! Contents within this block are managed by 'conda init' !!
   __conda_setup="$('/software/Anaconda3-5.3.0-el7-x86_64/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
         eval "$__conda_setup"
@@ -41,8 +41,8 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
   unset __conda_setup
 
 elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
-	export LSCOLORS=GxFxCxDxBxegedabagaced # IOS
-	export CLICOLOR=2
+  export LSCOLORS=GxFxCxDxBxegedabagaced # IOS
+  export CLICOLOR=2
 
 fi
 
