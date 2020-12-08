@@ -122,9 +122,6 @@ init_anvio_master () {
 	echo "Activating conda environment: anvio-master"
 	echo ""
 	conda activate anvio-master
-	# echo "Activating virtualenv: anvio-master & updating anvio from git repository"
-	# echo ""
-	# source ~/virtual-envs/anvio-master/bin/activate
 	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
 
