@@ -27,7 +27,7 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
   module load midway2; module load tmux/current; module load python/anaconda-2020.02 # the correct tmux
   source /project2/meren/VIRTUAL-ENVS/shared/00_load_all.sh
 
-  !! Contents within this block are managed by 'conda init' !!
+  # !! Contents within this block are managed by 'conda init' !!
   __conda_setup="$('/software/Anaconda3-5.3.0-el7-x86_64/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
         eval "$__conda_setup"
