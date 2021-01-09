@@ -109,8 +109,8 @@ init_anvio_stable () {
 		deactivate && conda deactivate
 	} &> /dev/null
 	export PATH="/Users/$USER/miniconda3/bin:$PATH"
-	conda activate anvio-6.2
-	echo "anvi'o 6.2 is now active. If you need master, please run anvi-activate-master."
+	conda activate anvio-7
+	echo "anvi'o v7 is now active. If you need master, please run anvi-activate-master."
 	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
 

@@ -100,7 +100,6 @@ alias Rstudio="open -na Rstudio"
 # ssh to UChicago Midway
 alias midway='ssh -L  8180:localhost:8180 -L 8181:localhost:8181 -L 8182:localhost:8182 -L 8183:localhost:8183 -L 8184:localhost:8184 -L 8185:localhost:8185 mschechter@midway2.rcc.uchicago.edu | tee /dev/tty | python3 ~/.ssh/run_webbrowser.py'
 
-
 # Play sounds!
 alias bn="printf 'Ugh the lab is so loud... /n';mpg123 ~/opt/brown_noise/Smoothed_Brown_Noise.mp3"
 
@@ -109,3 +108,6 @@ alias cdm="cd /project2/meren/"
 
 # Use Spacevim cause it's better
 alias vim="vim -u ~/.SpaceVim/vimrc"
+
+# Edit NOTES quickly
+alias en="vim ~/Google Drive/NOTES"
