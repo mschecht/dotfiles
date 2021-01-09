@@ -104,27 +104,32 @@ deactivate_smart () {
 	} &> /dev/null
 }
 
-init_anvio_stable () {
-	{
-		deactivate && conda deactivate
-	} &> /dev/null
-	export PATH="/Users/$USER/miniconda3/bin:$PATH"
+# This is where my miniconda base is, you can find out
+# where is yours by running this in your terminal:
+#
+#    conda env list | grep base
+#
+export MY_MINICONDA_BASE="/Users/$USER/miniconda3"
+
+init_anvio_7 () {
+  deactivate &> /dev/null
+  conda deactivate &> /dev/null
+  export PATH="$MY_MINICONDA_BASE/bin:$PATH"
+  . $MY_MINICONDA_BASE/etc/profile.d/conda.sh
 	conda activate anvio-7
 	echo "anvi'o v7 is now active. If you need master, please run anvi-activate-master."
 	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
 
-init_anvio_master () {
-	{
-		deactivate && conda deactivate
-	} &> /dev/null
-	export PATH="/Users/$USER/miniconda3/bin:$PATH"
-	echo "Activating conda environment: anvio-master"
-	echo ""
-	conda activate anvio-master
+init_anvio_dev () {
+  deactivate &> /dev/null
+  conda deactivate &> /dev/null
+  export PATH="$MY_MINICONDA_BASE/bin:$PATH"
+  . $MY_MINICONDA_BASE/etc/profile.d/conda.sh	
+  conda activate anvio-dev
 	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
 
-init_anvio_dev () {
+init_anvio_mschechter () {
 	conda activate /project2/meren/PEOPLE/mschechter/conda-envs/anvio-mschechter
 }

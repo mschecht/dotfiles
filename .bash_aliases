@@ -70,7 +70,7 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
   # Activate anvio
 	alias aam="conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/"
 	alias anvi-activate-5.5="conda activate /project2/meren/VIRTUAL-ENVS/anvio-5.5";
-  alias aad=init_anvio_dev
+  alias aamss=init_anvio_mschechter
 
   # Edit anvio fast
 	alias eanvio="cd /project2/meren/PEOPLE/mschechter/github/anvio"
@@ -90,8 +90,8 @@ elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
 	alias eanvio="subl ~/github/anvio"
 
   # activating anvio
-  alias aas=init_anvio_stable
-  alias aam=init_anvio_master
+  alias aas=init_anvio_7
+  alias aad=init_anvio_dev
 fi
 
 # Open RStudio is correct $WHICH_RSTUDIO_R
