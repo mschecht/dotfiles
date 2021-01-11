@@ -81,7 +81,7 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
   alias sq="squeue -o \"%8i %12j %4t %10u %20q %20a %10g %20P %10Q %5D %11l %11L %R\""
   alias q="sinfo --partition=meren -N -o '%N %P %11T %20E %C %8m %8e %8d' | column -t; echo ; squeue --partition=meren -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; echo ; squeue --partition=meren --user=$(id -u -n) -O 'arrayjobid:13,name,nodelist,stdout:120'"
   alias sc="scancel"
-  alias si="sinteractive --partition=meren --time=08:00:00 --mem=100G"
+  alias si="sinteractive --partition=meren --time=08:00:00 --mem=20G --ntasks-per-node=20"
   alias qe="squeue --user=$USER -o '%10i %45j %5u %5C %13m %8T %10M %9l %6D %R'"
 
 elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then

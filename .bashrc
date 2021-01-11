@@ -39,6 +39,8 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
         fi
     fi
   unset __conda_setup
+  [[ -z $TMUX ]] || conda deactivate; conda activate base # THANK YOU https://github.com/conda/conda/issues/6826#issuecomment-397287212
+
 
 elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
   export LSCOLORS=GxFxCxDxBxegedabagaced # IOS
