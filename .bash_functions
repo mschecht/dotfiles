@@ -10,7 +10,11 @@ doi2bib ()
 # create .tar.gz
 targz() { tar -zcvf $1.tar.gz $1; rm -r $1; }
 
-#tmuxnew() { tmux new-session -s $1 bash; }
+# Print string in corner of terminal to remind me where I am 
+function named() {
+  printf "\e]1337;SetBadgeFormat=%s\a" $(echo "$1" | base64)
+  echo -ne "\033]0;"$1"\007"
+}
 
 # extract *ANY* compressed file
 extract ()
@@ -87,7 +91,6 @@ fi
 
 
 # tmux function
-
 tmux-dev () {
 	tmux new-session bash
 	tmux split-window -v 'ipython'
