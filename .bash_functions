@@ -10,6 +10,10 @@ doi2bib ()
 # create .tar.gz
 targz() { tar -zcvf $1.tar.gz $1; rm -r $1; }
 
+# column -t file | head
+colhead() { column -t $1 | head; }
+coltail() { column -t $1 | tail; }
+
 # Print string in corner of terminal to remind me where I am 
 function named() {
   printf "\e]1337;SetBadgeFormat=%s\a" $(echo "$1" | base64)
@@ -133,6 +137,8 @@ init_anvio_dev () {
 	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
 
-init_anvio_mschechter () {
-	conda activate /project2/meren/PEOPLE/mschechter/conda-envs/anvio-mschechter
+init_anvio_mschechter () { 
+  conda activate /project2/meren/PEOPLE/mschechter/conda-envs/anvio-mschechter
 }
+
+
