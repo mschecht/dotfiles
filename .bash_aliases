@@ -11,6 +11,7 @@ alias h="head -n"
 alias t="tail -n"
 alias tf="tail -F"
 alias tre="tree -C"
+alias rf="readlink -f"
 
 # add color to grep.... PERTY COLORSS
 alias grep='grep --color=auto'
@@ -68,7 +69,7 @@ alias ds=deactivate_smart
 if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
   
   # Activate anvio
-	alias aam="conda activate /project2/meren/VIRTUAL-ENVS/anvio-master/"
+	alias aad="init_anvio_dev_midway"
 	alias anvi-activate-5.5="conda activate /project2/meren/VIRTUAL-ENVS/anvio-5.5";
   alias aamss=init_anvio_mschechter
 

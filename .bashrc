@@ -2,6 +2,13 @@
 # MAKE TERMINAL GREAT AGAIN!
 ############################
 
+#------------------------------
+# If we're scping or rsyncing... we're done here
+#------------------------------
+if [ -z "$PS1" ]; then
+    return
+fi
+
 #---------------------------------------------------------------------------
 # Global variables to change functionality depending on which computer im on
 #---------------------------------------------------------------------------
@@ -23,9 +30,10 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # Load various things depending on which computer I'm on
 if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
+  # because everyone likes colors
   export LSCOLORS="di=1;36:ln=1;35:so=1;32:pi=1;33:ex=1;31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=34;43" # colors
+  # Loading programs that midway does not load automatically and I want!
   module load midway2; module load tmux/current; module load python/anaconda-2020.02 # the correct tmux
-  source /project2/meren/VIRTUAL-ENVS/shared/00_load_all.sh
 
   # !! Contents within this block are managed by 'conda init' !!
   __conda_setup="$('/software/Anaconda3-5.3.0-el7-x86_64/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -40,6 +48,10 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
     fi
   unset __conda_setup
   [[ -z $TMUX ]] || conda deactivate; conda activate base # THANK YOU https://github.com/conda/conda/issues/6826#issuecomment-397287212
+  
+  # Loading paths to programs that anvio needs! 
+  source /project2/meren/VIRTUAL-ENVS/shared/00_load_all.sh
+  export  PATH="$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/EXECUTABLES/"
 
 
 elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
