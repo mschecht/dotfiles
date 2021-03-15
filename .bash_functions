@@ -144,7 +144,7 @@ init_anvio_dev_midway () {
   export PATH="$MY_MINICONDA_BASE/bin:$PATH"
   . $MY_MINICONDA_BASE/etc/profile.d/conda.sh	
   conda activate /project2/meren/VIRTUAL-ENVS/anvio-dev/
-	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
+	PS1="(\$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}')) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
 
 init_anvio_mschechter () { 
