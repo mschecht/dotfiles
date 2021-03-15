@@ -10,7 +10,15 @@ doi2bib ()
 # create .tar.gz
 targz() { tar -zcvf $1.tar.gz $1; rm -r $1; }
 
-#tmuxnew() { tmux new-session -s $1 bash; }
+# column -t file | head
+colhead() { column -t $1 | head; }
+coltail() { column -t $1 | tail; }
+
+# Print string in corner of terminal to remind me where I am 
+function named() {
+  printf "\e]1337;SetBadgeFormat=%s\a" $(echo "$1" | base64)
+  echo -ne "\033]0;"$1"\007"
+}
 
 # extract *ANY* compressed file
 extract ()
@@ -87,7 +95,6 @@ fi
 
 
 # tmux function
-
 tmux-dev () {
 	tmux new-session bash
 	tmux split-window -v 'ipython'
@@ -118,7 +125,7 @@ init_anvio_7 () {
   . $MY_MINICONDA_BASE/etc/profile.d/conda.sh
 	conda activate anvio-7
 	echo "anvi'o v7 is now active. If you need master, please run anvi-activate-master."
-	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
+	PS1="(\$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}')) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
 
 init_anvio_dev () {
@@ -127,7 +134,7 @@ init_anvio_dev () {
   export PATH="$MY_MINICONDA_BASE/bin:$PATH"
   . $MY_MINICONDA_BASE/etc/profile.d/conda.sh	
   conda activate anvio-dev
-	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
+	PS1="(\$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}')) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
 
 
@@ -139,6 +146,10 @@ init_anvio_dev_midway () {
   conda activate /project2/meren/VIRTUAL-ENVS/anvio-dev/
 	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
-init_anvio_mschechter () {
-	conda activate /project2/meren/PEOPLE/mschechter/conda-envs/anvio-mschechter
+
+init_anvio_mschechter () { 
+  conda activate /project2/meren/PEOPLE/mschechter/conda-envs/anvio-mschechter
+	PS1="(\$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}')) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
+
+

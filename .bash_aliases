@@ -89,6 +89,7 @@ elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
 
   # Edit anvio fast
 	alias eanvio="subl ~/github/anvio"
+  alias cda="cd ~/github/anvio"
 
   # activating anvio
   alias aas=init_anvio_7
