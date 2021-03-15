@@ -125,7 +125,7 @@ init_anvio_7 () {
   . $MY_MINICONDA_BASE/etc/profile.d/conda.sh
 	conda activate anvio-7
 	echo "anvi'o v7 is now active. If you need master, please run anvi-activate-master."
-	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
+	PS1="(\$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}')) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
 
 init_anvio_dev () {
@@ -134,11 +134,12 @@ init_anvio_dev () {
   export PATH="$MY_MINICONDA_BASE/bin:$PATH"
   . $MY_MINICONDA_BASE/etc/profile.d/conda.sh	
   conda activate anvio-dev
-	PS1="(\$CONDA_DEFAULT_ENV) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
+	PS1="(\$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}')) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
 
 init_anvio_mschechter () { 
   conda activate /project2/meren/PEOPLE/mschechter/conda-envs/anvio-mschechter
+	PS1="(\$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}')) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
 
 
