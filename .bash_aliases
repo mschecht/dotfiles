@@ -14,9 +14,10 @@ alias tre="tree -C"
 alias rf="readlink -f"
 
 # add color to grep.... PERTY COLORSS
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
+GREP_OPTIONS=--color=auto
+#alias grep='grep --color=auto'
+#alias egrep='egrep --color=auto'
+#alias fgrep='fgrep --color=auto'
 
 # yadm commands... because who wants to waste time editing their dotfiles AM I RIGHT!?
 # yadm IS the way to go for managing dotfiles: https://yadm.io/
@@ -29,11 +30,12 @@ alias yp="yadm pull"
 # quickly edit configurations... because nobody got time... wise words from Evan
 alias eb='vim ~/.bashrc'
 alias et='vim ~/.tmux.conf'
-alias ev='vim ~/.SpaceVim.d/init.toml'
+#alias ev='vim ~/.SpaceVim.d/init.toml'
 alias eu="vim ~/.bash_utils"
 alias ea="vim ~/.bash_aliases"
 alias ep="vim ~/.bash_prompt"
 alias ef="vim ~/.bash_functions"
+alias ev="vim ~/.vimrc"
 
 # History commands
 alias h1="history 10"
@@ -71,10 +73,10 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
   # Activate anvio
 	alias aad="init_anvio_dev_midway"
 	alias anvi-activate-5.5="conda activate /project2/meren/VIRTUAL-ENVS/anvio-5.5";
-  alias aamss=init_anvio_mschechter
+    alias aamss=init_anvio_mschechter
 
   # Edit anvio fast
-	alias eanvio="cd /project2/meren/PEOPLE/mschechter/github/anvio"
+	alias eanvio="vim /project2/meren/PEOPLE/mschechter/github/anvio"
 
   #SLURM Aliases that provide information in a useful manner for our clusters
   alias si="sinfo -o \"%20P %5D %14F %8z %10m %10d %11l %32f %N\""
@@ -88,7 +90,7 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
 elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
 
   # Edit anvio fast
-	alias eanvio="subl ~/github/anvio"
+  alias eanvio="cd ~/github/anvio && vim ."
   alias cda="cd ~/github/anvio"
 
   # activating anvio
@@ -109,7 +111,7 @@ alias bn="printf 'Ugh the lab is so loud... /n';mpg123 ~/opt/brown_noise/Smoothe
 alias cdm="cd /project2/meren/"
 
 # Use Spacevim cause it's better
-alias vim="vim -u ~/.SpaceVim/vimrc"
+#alias vim="vim -u ~/.SpaceVim/vimrc"
 
 # Edit NOTES quickly
 alias en="vim ~/Google Drive/NOTES"
