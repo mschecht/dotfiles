@@ -91,7 +91,7 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
 elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
 
 	# Edit anvio fast
-	alias eanvio="cd ~/github/anvio && vim ."
+	alias eanvio="vim ~/github/anvio"
 	alias cda="cd ~/github/anvio"
 	
 	# activating anvio
