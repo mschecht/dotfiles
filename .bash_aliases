@@ -109,4 +109,4 @@ alias midway='ssh -L  8180:localhost:8180 -L 8181:localhost:8181 -L 8182:localho
 alias bn="printf 'Ugh the lab is so loud... /n';mpg123 ~/opt/brown_noise/Smoothed_Brown_Noise.mp3"
 
 # Edit NOTES quickly
-alias en="vim ~/Google Drive/NOTES"
+alias en="vim Google_drive_uchicago/NOTES/"

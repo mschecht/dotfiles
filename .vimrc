@@ -105,7 +105,7 @@ silent! if plug#begin()
     Plug       'airblade/vim-gitgutter'
     Plug       'ctrlpvim/ctrlp.vim'
     Plug       'majutsushi/tagbar'
-	Plug       'vim-airline/vim-airline'
+    Plug       'vim-airline/vim-airline'
     Plug       'davidhalter/jedi-vim'
     Plug       'morhetz/gruvbox'
     Plug       'tpope/vim-fugitive'
