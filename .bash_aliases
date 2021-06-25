@@ -73,6 +73,8 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
 
 	# Meren lab essentials
 	alias cdm="cd /project2/meren/"
+	alias cdmss="cd /project2/meren/PEOPLE/mschechter"
+	alias gpmss="cd /project2/meren/PEOPLE/mschechter/github/anvio && git pull && cd -"
 
 
 	#SLURM Aliases that provide information in a useful manner for our clusters
