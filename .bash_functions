@@ -119,12 +119,11 @@ deactivate_smart () {
 export MY_MINICONDA_BASE="/Users/$USER/miniconda3"
 
 init_anvio_7 () {
-  deactivate &> /dev/null
-  conda deactivate &> /dev/null
-  export PATH="$MY_MINICONDA_BASE/bin:$PATH"
-  . $MY_MINICONDA_BASE/etc/profile.d/conda.sh
-	conda activate anvio-7
-	echo "anvi'o v7 is now active. If you need master, please run anvi-activate-master."
+    deactivate &> /dev/null
+    conda deactivate &> /dev/null
+    export PATH="$MY_MINICONDA_BASE/bin:$PATH"
+    . $MY_MINICONDA_BASE/etc/profile.d/conda.sh
+    conda activate anvio-7.1
 	PS1="(\$(echo \$CONDA_DEFAULT_ENV | awk -F '/' '{print \$NF}')) $YELLOW[$USER@$HOSTSTYLE\h$YELLOW:$RED$WD$YELLOW]$RED \$git_branch 🌴 $COLOR_DEFAULT"
 }
 
