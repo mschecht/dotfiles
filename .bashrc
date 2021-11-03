@@ -134,3 +134,11 @@ for file in ~/.{bash_prompt,bash_functions,bash_aliases}; do
 	fi;
 done;
 unset file;
+
+
+#---------------------------
+# Install tabset
+#---------------------------
+
+# Tabset is a nice program extension of iterm2 to add a color to the tab and label in the top right corner to help organize tabs
+# Installation instructions: https://github.com/jonathaneunice/iterm2-tab-set#readme
