@@ -8,7 +8,7 @@ git clone https://github.com/TheLocehiliosan/yadm.git ~/.yadm-project
 ln -s ~/.yadm-project/yadm ~/bin/yadm
 ```
 
-2. [Connect yadm to dotfiles rep](If you have an existing remote repository)
+2. [Connect yadm to dotfiles rep](https://yadm.io/docs/getting_started#:~:text=If%20you%20have%20an%20existing%20remote%20repository)
 
 ```bash
 yadm clone https://github.com/mschecht/dotfiles.git -f
