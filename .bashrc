@@ -32,8 +32,6 @@ if [[ "$midway_server" =~ "$host"  ]]; then # UChicago HPC
 	# Here is a good link to changing colors: https://geoff.greer.fm/lscolors/
   # because everyone likes colors
   export LSCOLORS="di=1;36:ln=1;35:so=1;32:pi=1;33:ex=1;31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=34;43" # colors
-  # Loading programs that midway does not load automatically and I want!
-  module load midway2; module load tmux/current; module load python/anaconda-2020.02 # the correct tmux
 
   # !! Contents within this block are managed by 'conda init' !!
   __conda_setup="$('/software/Anaconda3-5.3.0-el7-x86_64/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
