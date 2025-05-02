@@ -73,6 +73,7 @@ if [[ "$midway_server" =~ "$host"  ]]; then
 
 	# Meren lab essentials
 	alias cdm="cd /project2/meren/"
+	alias cdb="cd /project/lbarreiro/"
 	alias cdmss="cd /project2/meren/PEOPLE/mschechter"
 	alias gpmss="cd /project2/meren/PEOPLE/mschechter/github/anvio && git pull && cd -"
 
