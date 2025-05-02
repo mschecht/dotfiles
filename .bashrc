@@ -1,10 +1,10 @@
-############################
-# MAKE TERMINAL GREAT AGAIN!
-############################
+##########################
+# >>> SHELL INITIALIZATION
+##########################
 
-#------------------------------
+#-----------------------------------------------
 # If we're scping or rsyncing... we're done here
-#------------------------------
+#-----------------------------------------------
 if [ -z "$PS1" ]; then
     return
 fi
@@ -23,14 +23,13 @@ fi
 
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
-#-----------------
-# LS color options
-#-----------------
+#----------------------------------------------
+# Load different stuffs depending on where I am
+#----------------------------------------------
+host=$(uname -n) # define host variable
 
-# Here is a good link to changing colors: https://geoff.greer.fm/lscolors/
-
-# Load various things depending on which computer I'm on
-if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
+if [[ "$midway_server" =~ "$host"  ]]; then # UChicago HPC
+	# Here is a good link to changing colors: https://geoff.greer.fm/lscolors/
   # because everyone likes colors
   export LSCOLORS="di=1;36:ln=1;35:so=1;32:pi=1;33:ex=1;31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=34;43" # colors
   # Loading programs that midway does not load automatically and I want!
@@ -55,16 +54,14 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
   export PATH="$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/EXECUTABLES/"
 
 
-elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
+elif [[ "$my_uchicago_macbook" =~ "$host" ]]; then # Locals only
 	# Note to self:
 	# native ls does not support coloring by file extension. To implement this I would need to run gnu ls: gls
 	export LS_COLORS=GxFxCxDxBxegedabagaced
-	# export LSCOLORS='*.Rproj=01;31:'$LS_COLORS
-  # export CLICOLOR=2
 
+	# PATH for downloading NCBI files: https://github.com/ncbi/sra-tools
 	export PATH=$PATH:/Users/mschechter/opt/sratoolkit.2.11.3-mac64/bin
 fi
-
 
 #------------------------------
 # BASH command history settings
@@ -80,9 +77,6 @@ export HISTFILESIZE=10000000000
 shopt -s histappend
 # History time format
 HISTTIMEFORMAT="%d/%m/%y %T "
-
-#after each command save and reload history
-
 
 #----------
 # Miniconda
@@ -105,6 +99,7 @@ export LANG=en_US.UTF-8
 # This has never worked and is so irritating: https://support.rstudio.com/hc/en-us/articles/200486138-Changing-R-versions-for-RStudio-desktop
 #export RSTUDIO_WHICH_R=/Users/mschechter/miniconda3/bin/r
 #export RSTUDIO_WHICH_R=/Users/mschechter/miniconda3/envs/anvio-master/bin/r
+
 #-------------------------
 # Changing HOMEBREW editor
 #-------------------------

@@ -6,7 +6,6 @@ alias ld='ls -rhlt'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
-alias vi='vim'
 alias col="column -t"
 alias h="head -n"
 alias t="tail -n"
@@ -62,7 +61,7 @@ alias showpath='echo $PATH | tr ":" "\n" | nl'
 alias ds=deactivate_smart
 
 # Edit anvio fast
-if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
+if [[ "$midway_server" =~ "$host"  ]]; then
   
 	# Activate anvio
 	alias aad="init_anvio_dev_midway"
@@ -97,7 +96,7 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
 	alias si="sinteractive --partition=meren --time=08:00:00 --mem=20G --ntasks-per-node=20"
 	alias qe="squeue --user=$USER -o '%10i %45j %5u %5C %13m %8T %10M %9l %6D %R'"
 
-elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
+elif [[ "$my_uchicago_macbook" =~ "$host" ]]; then
 
 	# Edit anvio fast
 	alias eanvio="code ~/github/anvio"
