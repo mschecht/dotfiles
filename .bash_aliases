@@ -2,7 +2,7 @@
 alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -hla'
-alias ld='ls -hlt'
+alias ld='ls -rhlt'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
@@ -15,7 +15,7 @@ alias tre="tree -C"
 alias rf="readlink -f"
 
 # add color to grep.... PERTY COLORSS
-GREP_OPTIONS=--color=auto
+alias grep="grep --color"
 
 # yadm commands... because who wants to waste time editing their dotfiles AM I RIGHT!?
 # yadm IS the way to go for managing dotfiles: https://yadm.io/
@@ -67,7 +67,7 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
 	# Activate anvio
 	alias aad="init_anvio_dev_midway"
 	alias anvi-activate-5.5="conda activate /project2/meren/VIRTUAL-ENVS/anvio-5.5";
-    alias aamss=init_anvio_mschechter
+  alias aamss=init_anvio_mschechter
 
 	# Edit anvio fast
 	alias eanvio="vim /project2/meren/PEOPLE/mschechter/github/anvio"
@@ -78,6 +78,7 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
 	alias gpmss="cd /project2/meren/PEOPLE/mschechter/github/anvio && git pull && cd -"
 
 
+# ─── SLURM control ─────────────────────────────────────────────────────────
 	#SLURM Aliases that provide information in a useful manner for our clusters
 	alias si="sinfo -o \"%20P %5D %14F %8z %10m %10d %11l %32f %N\""
 	alias si2="sinfo -o \"%20P %5D %6t %8z %10m %10d %11l %32f %N\""
@@ -94,7 +95,7 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
 elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
 
 	# Edit anvio fast
-	alias eanvio="vim ~/github/anvio"
+	alias eanvio="code ~/github/anvio"
 	alias cda="cd ~/github/anvio"
 	
 	# activating anvio
@@ -108,8 +109,14 @@ alias Rstudio="open -na Rstudio"
 # ssh to UChicago Midway
 alias midway='ssh -L  8180:localhost:8180 -L 8181:localhost:8181 -L 8182:localhost:8182 -L 8183:localhost:8183 -L 8184:localhost:8184 -L 8185:localhost:8185 mschechter@midway2.rcc.uchicago.edu | tee /dev/tty | python3 ~/.ssh/run_webbrowser.py'
 
-# Play sounds!
-alias bn="printf 'Ugh the lab is so loud... /n';mpg123 ~/opt/brown_noise/Smoothed_Brown_Noise.mp3"
+# ─── Sound Control Aliases ─────────────────────────────────────────────
+# Play brown noise to reduce ambient distractions in the lab
+alias bn="printf 'Ugh the lab is so loud... \n\n'; mpg123 ~/opt/brown_noise/Smoothed_Brown_Noise.mp3"
+
+# Add more aliases below for different soundscapes (e.g., white noise, rain, music)
 
 # Edit NOTES quickly
 alias en="vim Google_drive_uchicago/NOTES/"
+
+# Inkscape - open a file quickly from the terminal
+alias ink="open -a Inkscape"

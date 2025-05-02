@@ -9,10 +9,10 @@ if [ -z "$PS1" ]; then
     return
 fi
 
-#---------------------------------------------------------------------------
-# Global variables to change functionality depending on which computer im on
-#---------------------------------------------------------------------------
-export my_uchicago_macbook="MED42040.lan:MED42040.local:MED42040.local:MED42040.fios-router.home"
+#----------------------------------------------------------------------------
+# Global variables to change functionality depending on which computer I'm on
+#----------------------------------------------------------------------------
+export my_uchicago_macbook="MED42040.lan:MED42040.local:MED42040.local:MED42040.fios-router.home:10-17-10-236.ddhcp.uni-oldenburg.de"
 export midway_server="midway2-login1.rcc.local:midway2-login2.rcc.local:midway-l16b-28.rcc.local:midway2-0701.rcc.local:midway2-0705.rcc.local:midway2-0706.rcc.local"
 
 # welcome message
@@ -51,12 +51,17 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
   
   # Loading paths to programs that anvio needs! 
   source /project2/meren/VIRTUAL-ENVS/shared/00_load_all.sh
-  export  PATH="$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/EXECUTABLES/"
+  export PATH="$PATH:/project2/meren/RESOURCES/PUBLIC/SOFTWARE/EXECUTABLES/"
 
 
 elif [[ "$my_uchicago_macbook" =~ "$(uname -n)" ]]; then
-  export LSCOLORS=GxFxCxDxBxegedabagaced # IOS
-  export CLICOLOR=2
+	# Note to self:
+	# native ls does not support coloring by file extension. To implement this I would need to run gnu ls: gls
+	export LS_COLORS=GxFxCxDxBxegedabagaced
+	# export LSCOLORS='*.Rproj=01;31:'$LS_COLORS
+  # export CLICOLOR=2
+
+	export PATH=$PATH:/Users/mschechter/opt/sratoolkit.2.11.3-mac64/bin
 fi
 
 
