@@ -13,7 +13,7 @@ fi
 # Global variables to change functionality depending on which computer I'm on
 #----------------------------------------------------------------------------
 export my_uchicago_macbook="MED42040.lan:MED42040.local:MED42040.local:MED42040.fios-router.home:10-17-10-236.ddhcp.uni-oldenburg.de"
-export midway_server="midway2-login1.rcc.local:midway2-login2.rcc.local:midway-l16b-28.rcc.local:midway2-0701.rcc.local:midway2-0705.rcc.local:midway2-0706.rcc.local"
+export midway_server="midway2-login{1,2}.rcc.local:midway-l16b-28.rcc.local:midway2-070{1,5,6}.rcc.local:midway3-login{1,2,3,4}"
 
 # welcome message
 if shopt -q login_shell; then
