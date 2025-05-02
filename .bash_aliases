@@ -88,6 +88,11 @@ if [[ "$midway_server" =~ "$(uname -n)"  ]]; then
 			 squeue --partition=meren -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; \
 			 echo ; \
 			 squeue --partition=meren --user=$(id -u -n) -O 'arrayjobid:13,name,nodelist,stdout:120'"
+	alias qlb="sinfo --partition=lbarreiro -N -o '%N %P %11T %20E %C %8m %8e %8d' | column -t; \
+			 echo ; \
+			 squeue --partition=lbarreiro -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; \
+			 echo ; \
+			 squeue --partition=lbarreiro --user=$(id -u -n) -O 'arrayjobid:13,name,nodelist,stdout:120'"
 	alias sc="scancel"
 	alias si="sinteractive --partition=meren --time=08:00:00 --mem=20G --ntasks-per-node=20"
 	alias qe="squeue --user=$USER -o '%10i %45j %5u %5C %13m %8T %10M %9l %6D %R'"
@@ -108,6 +113,7 @@ alias Rstudio="open -na Rstudio"
 
 # ssh to UChicago Midway
 alias midway='ssh -L  8180:localhost:8180 -L 8181:localhost:8181 -L 8182:localhost:8182 -L 8183:localhost:8183 -L 8184:localhost:8184 -L 8185:localhost:8185 mschechter@midway2.rcc.uchicago.edu | tee /dev/tty | python3 ~/.ssh/run_webbrowser.py'
+alias midway3='ssh -L  8180:localhost:8180 -L 8181:localhost:8181 -L 8182:localhost:8182 -L 8183:localhost:8183 -L 8184:localhost:8184 -L 8185:localhost:8185 mschechter@midway3.rcc.uchicago.edu | tee /dev/tty | python3 ~/.ssh/run_webbrowser.py'
 
 # ─── Sound Control Aliases ─────────────────────────────────────────────
 # Play brown noise to reduce ambient distractions in the lab
