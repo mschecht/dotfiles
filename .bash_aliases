@@ -88,11 +88,12 @@ if [[ "$midway_server" =~ "$host"  ]]; then
 			 squeue --partition=meren -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; \
 			 echo ; \
 			 squeue --partition=meren --user=$(id -u -n) -O 'arrayjobid:13,name,nodelist,stdout:120'"
-	alias qlb="sinfo --partition=lbarreiro -N -o '%N %P %11T %20E %C %8m %8e %8d' | column -t; \
-			 echo ; \
-			 squeue --partition=lbarreiro -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; \
-			 echo ; \
-			 squeue --partition=lbarreiro --user=$(id -u -n) -O 'arrayjobid:13,name,nodelist,stdout:120'"
+	alias qlb="\
+				sinfo --partition=lbarreiro,lbarreiro-hm -N -o '%N %P %11T %20E %C %8m %8e %8d' | column -t; \
+				echo; \
+				squeue --partition=lbarreiro,lbarreiro-hm -o '%11i %35j %5u %5C %13m %8T %10M %9l %6D %R'; \
+				echo; \
+				squeue --partition=lbarreiro,lbarreiro-hm --user=mschechter -O 'arrayjobid:13,name,nodelist,stdout:120'"
 	alias sc="scancel"
 	alias si="sinteractive --partition=meren --time=08:00:00 --mem=20G --ntasks-per-node=20"
 	alias qe="squeue --user=$USER -o '%10i %45j %5u %5C %13m %8T %10M %9l %6D %R'"
